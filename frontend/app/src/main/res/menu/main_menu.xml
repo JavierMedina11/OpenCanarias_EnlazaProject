@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:title="Home"
+            android:icon="@drawable/imglogin"/>
+        <item
+            android:id="@+id/nav_home2"
+            android:title="Ciclyng"
+            android:icon="@drawable/imglogin"/>
+        <item
+            android:id="@+id/nav_home3"
+            android:title="Bus"
+            android:icon="@drawable/imglogin"/>
+    </group>
+    <group android:checkableBehavior="single">
+        <item
+            android:title="Profile">
+            <menu>
+                <item
+                    android:id="@+id/nav_home4"
+                    android:title="Home"
+                    android:icon="@drawable/imglogin"/>
+                <item
+                    android:id="@+id/nav_home5"
+                    android:title="Ciclyng"
+                    android:icon="@drawable/imglogin"/>
+                <item
+                    android:id="@+id/nav_home6"
+                    android:title="Bus"
+                    android:icon="@drawable/imglogin"/>
+            </menu>
+        </item>
+    </group>
+
+    <item
+        android:title="Comunicate">
+        <menu>
+            <item
+                android:id="@+id/nav_home7"
+                android:title="Home"
+                android:icon="@drawable/imglogin"/>
+            <item
+                android:id="@+id/nav_home8"
+                android:title="Ciclyng"
+                android:icon="@drawable/imglogin"/>
+            <item
+                android:id="@+id/nav_home9"
+                android:title="Bus"
+                android:icon="@drawable/imglogin"/>
+        </menu>
+    </item>
+</menu>
