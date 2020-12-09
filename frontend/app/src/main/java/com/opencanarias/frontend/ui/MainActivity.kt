@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.OrientationHelper
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.opencanarias.frontend.R
-import com.opencanarias.frontend.io.IRetrofitService
+//import com.opencanarias.frontend.io.IRetrofitService
 import com.opencanarias.frontend.io.ServiceImpl
 import com.opencanarias.frontend.models.Room
 import com.retrofitP.loginimplementation.util.PreferenceHelper
@@ -19,16 +19,16 @@ import com.retrofitP.loginimplementation.util.PreferenceHelper.get
 import com.retrofitP.loginimplementation.util.PreferenceHelper.set
 import com.retrofitP.loginimplementation.util.toast
 import kotlinx.android.synthetic.main.activity_main.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+//import retrofit2.Call
+//import retrofit2.Callback
+//import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
-
+/*
     private val retrofitService: IRetrofitService by lazy{
         IRetrofitService.create()
     }
-
+*/
     private val preferences by lazy{
         PreferenceHelper.defaultPrefs(this)
     }
@@ -42,12 +42,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        /*
-        val listRooms: ArrayList<Room> = ArrayList<Room>(10);
-            listRooms.add(Room("France", "Eiffel Tower","@drawable/france.jpg", 3.2f))
-            listRooms.add(Room("Spain", "Sagrada Familia","@drawable/france.jpg", 5f))
-            listRooms.add(Room("Italy", "Coliseo Romano","@drawable/france.jpg", 4.78f))
-        */
+
         rooms = ArrayList<Room>()
 
         viewManager = LinearLayoutManager(this, OrientationHelper.HORIZONTAL, false)
@@ -59,10 +54,10 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter = viewAdapter
 
         getAllRooms()
-
+/*
         buttonLogout.setOnClickListener(){
             performLogout()
-        }
+        }*/
     }
 
     private fun getAllRooms() {
@@ -76,7 +71,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
+/*
     private fun performLogout(){
         val jwt = preferences["token", ""]
         val call = retrofitService.postLogout("Bearer $jwt")
@@ -90,7 +85,7 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
-
+*/
     private fun clearSessionPreferences(){
         preferences["token"] = "";
     }

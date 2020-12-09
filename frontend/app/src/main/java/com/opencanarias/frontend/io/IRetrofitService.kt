@@ -1,5 +1,5 @@
 package com.opencanarias.frontend.io
-
+/*
 import com.opencanarias.frontend.io.response.LoginResponse
 import retrofit2.Call
 import retrofit2.Retrofit
@@ -50,4 +50,4 @@ interface IRetrofitService {
     fun postLogin(@Field("email") email: String , @Field("password") password: String):
             Call<LoginResponse>
 */
-}
+}*/

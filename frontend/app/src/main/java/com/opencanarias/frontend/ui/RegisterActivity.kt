@@ -4,22 +4,22 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.opencanarias.frontend.R
-import com.opencanarias.frontend.io.IRetrofitService
+//import com.opencanarias.frontend.io.IRetrofitService
 import com.opencanarias.frontend.io.ServiceImpl
 import com.opencanarias.frontend.io.response.LoginResponse
 import com.opencanarias.frontend.models.User
 import com.retrofitP.loginimplementation.util.toast
 import kotlinx.android.synthetic.main.activity_register.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+//import retrofit2.Call
+//import retrofit2.Callback
+//import retrofit2.Response
 
 class RegisterActivity : AppCompatActivity() {
-
+/*
     private val retrofitService: IRetrofitService by lazy{
         IRetrofitService.create()
     }
-
+*/
     //val userId = this.intent.getIntExtra("id", 1)
 
     override fun onCreate(savedInstanceState: Bundle?) {

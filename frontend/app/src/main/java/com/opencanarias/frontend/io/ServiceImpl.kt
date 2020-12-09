@@ -12,23 +12,65 @@ import org.json.JSONObject
 class ServiceImpl: IVolleyService {
 
     override fun getAll(context: Context, completionHandler: (response: ArrayList<Room>?) -> Unit) {
-        val path = ServiceSingleton.getInstance(context).baseUrl + "/api/rooms"
+        val path = ServiceSingleton.getInstance(context).baseUrl + "rooms"
         val arrayRequest = JsonArrayRequest(Request.Method.GET, path, null,
             { response ->
                 var rooms: ArrayList<Room> = ArrayList()
                 for (i in 0 until response.length()) {
                     val bicycle = response.getJSONObject(i)
                     val id = bicycle.getInt("id")
-                    val model = bicycle.getString("model")
-                    val brand = bicycle.getString("brand")
-                    rooms.add(Room(id, brand, model))
+                    val number = bicycle.getInt("number")
+                    val name = bicycle.getString("name")
+                    val subname = bicycle.getString("subname")
+                    val description = bicycle.getString("description")
+                    val numperson = bicycle.getInt("numperson")
+                    val size = bicycle.getInt("size")
+                    val price = bicycle.getInt("price")
+                    val starating = bicycle.getDouble("starating")
+                    val avaliable = bicycle.getInt("avaliable")
+                    val urlimg1 = bicycle.getString("urlimg1")
+                    val urlimg2 = bicycle.getString("urlimg2")
+                    val urlimg3 = bicycle.getString("urlimg3")
+                    val urlimg4 = bicycle.getString("urlimg4")
+                    rooms.add(Room(id, number, name, subname, description, numperson, size, price,
+                        starating.toFloat(), avaliable, urlimg1, urlimg2, urlimg3, urlimg4))
                 }
-                completionHandler(bicycles)
+                completionHandler(rooms)
             },
             { error ->
-                completionHandler(ArrayList<Bicycle>())
+                completionHandler(ArrayList<Room>())
             })
-        BicycleSingleton.getInstance(context).addToRequestQueue(arrayRequest)
+        ServiceSingleton.getInstance(context).addToRequestQueue(arrayRequest)
+    }
+
+    override fun getById(context: Context, roomId: Int, completionHandler: (response: Room?) -> Unit) {
+        val path = ServiceSingleton.getInstance(context).baseUrl + "rooms/" + roomId
+        val objectRequest = JsonObjectRequest(Request.Method.GET, path, null,
+            { response ->
+                if(response == null) completionHandler(null)
+                val id = response.getInt("id")
+                val number = response.getInt("number")
+                val name = response.getString("name")
+                val subname = response.getString("subname")
+                val description = response.getString("description")
+                val numperson = response.getInt("numperson")
+                val size = response.getInt("size")
+                val price = response.getInt("price")
+                val starating = response.getDouble("starating")
+                val avaliable = response.getInt("avaliable")
+                val urlimg1 = response.getString("urlimg1")
+                val urlimg2 = response.getString("urlimg2")
+                val urlimg3 = response.getString("urlimg3")
+                val urlimg4 = response.getString("urlimg4")
+
+                val bicycle = Room(id, number, name, subname, description, numperson, size, price,
+                    starating.toFloat(), avaliable, urlimg1, urlimg2, urlimg3, urlimg4)
+                completionHandler(bicycle)
+            },
+            { error ->
+                completionHandler(null)
+            })
+        ServiceSingleton.getInstance(context).addToRequestQueue(objectRequest)
     }
 
     override fun registerUser(context: Context, user: User, completionHandler: () -> Unit) {

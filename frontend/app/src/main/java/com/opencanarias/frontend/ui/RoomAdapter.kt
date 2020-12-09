@@ -1,6 +1,8 @@
 package com.opencanarias.frontend.ui
 
 import android.content.Context
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,15 +32,23 @@ class RoomAdapter(var roomList: ArrayList<Room>, val context: Context): Recycler
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bindView(b: Room, context: Context){
             val kbvLocation: TextView = itemView.findViewById(R.id.kbvLocation)
-            val textTitle: TextView = itemView.findViewById(R.id.textTitle)
-            val textLocation: TextView = itemView.findViewById(R.id.textLocation)
+            val textName: TextView = itemView.findViewById(R.id.textTitle)
+            val textSubname: TextView = itemView.findViewById(R.id.textLocation)
             val textStar: TextView = itemView.findViewById(R.id.textStarRating)
 
-            Picasso.with(context).load(b.imageUrl).into(kbvLocation);
+            //Picasso.with(context).load(b.urlimg1).into(kbvLocation);
 
-            textTitle.text = b.title
-            textLocation.text = b.location
+            textName.text = b.name
+            textSubname.text = b.subname
             textStar.text = b.starRating.toString()
+
+            itemView.setOnClickListener {
+                val intent = Intent(context, RoomDetailActivity::class.java)
+                intent.putExtra("roomId", b.id)
+                intent.putExtra("state", "Showing")
+                Log.v("hola caracola antes", b.id.toString())
+                context.startActivity(intent)
+            }
         }
     }
 

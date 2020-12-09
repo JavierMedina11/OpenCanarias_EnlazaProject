@@ -5,38 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/startColor"
+    android:background="@drawable/bg_forms"
     tools:context=".ui.MainActivity">
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:contentDescription="@string/app_name"
-            android:scaleType="centerCrop"
-            android:src="@mipmap/ic_launcher"/>
-
-    </androidx.cardview.widget.CardView>
-
-    <Button
-        android:id="@+id/buttonLogout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="316dp"
-        android:text="Logout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView2"
@@ -154,6 +124,77 @@
 
     </LinearLayout>
 
+
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/imageWaves1"
+        android:layout_width="627dp"
+        android:layout_height="1097dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/waves"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageWaves2"
+        android:layout_width="627dp"
+        android:layout_height="1097dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/waves"
+        tools:ignore="MissingConstraints" />
+
+    <me.ibrahimsn.lib.SmoothBottomBar
+        android:id="@+id/bottomBar"
+        android:layout_width="427dp"
+        android:layout_height="58dp"
+        app:iconSize="20dp"
+        app:iconTint="#757575"
+        app:iconTintActive="@color/startColor"
+        app:indicatorColor="@color/dark"
+        app:indicatorRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/navigation_menu"
+        app:textColor="@color/startColor"
+        app:textSize="15sp"
+        tools:layout_editor_absoluteX="-9dp"
+        tools:ignore="MissingConstraints" />
+
+    <soup.neumorphism.NeumorphImageButton
+        android:id="@+id/neumorphImageButton2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:scaleType="center"
+        android:src="@drawable/usercount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <soup.neumorphism.NeumorphImageButton
+        android:id="@+id/neumorphImageButton"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:scaleType="center"
+        android:src="@drawable/logout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/locationViewPager"
         android:layout_width="match_parent"
@@ -166,21 +207,7 @@
         app:layout_constraintTop_toBottomOf="@id/linearLayout">
     </androidx.recyclerview.widget.RecyclerView>
 
-    <me.ibrahimsn.lib.SmoothBottomBar
-        android:id="@+id/bottomBar"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        app:iconSize="20dp"
-        app:iconTint="#757575"
-        app:iconTintActive="@color/startColor"
-        app:indicatorColor="@color/dark"
-        app:indicatorRadius="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/navigation_menu"
-        app:textColor="@color/startColor"
-        app:textSize="15sp"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
