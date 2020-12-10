@@ -4,17 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bghome"
+    android:background="#000000"
     tools:context=".ui.HomeActivity">
 
-    <View
+    <ImageView
         android:id="@+id/view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bghome"
+        tools:ignore="MissingConstraints"/>
+
+    <ImageView
+        android:id="@+id/viewOP"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@drawable/ophome"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+        tools:ignore="MissingConstraints"/>
 
     <ImageView
         android:id="@+id/imageView2"

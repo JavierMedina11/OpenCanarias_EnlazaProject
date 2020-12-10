@@ -6,13 +6,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.opencanarias.frontend.R
 import com.opencanarias.frontend.models.Room
 import com.squareup.picasso.Picasso
-import com.squareup.picasso.RequestCreator
-
 
 class RoomAdapter(var roomList: ArrayList<Room>, val context: Context): RecyclerView.Adapter<RoomAdapter.ViewHolder>() {
 
@@ -31,15 +30,17 @@ class RoomAdapter(var roomList: ArrayList<Room>, val context: Context): Recycler
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bindView(b: Room, context: Context){
-            val kbvLocation: TextView = itemView.findViewById(R.id.kbvLocation)
+            val url = "http://192.168.56.1:8000/img/"
+            val kbvLocation: ImageView = itemView.findViewById(R.id.kbvLocation)
             val textName: TextView = itemView.findViewById(R.id.textTitle)
             val textSubname: TextView = itemView.findViewById(R.id.textLocation)
             val textStar: TextView = itemView.findViewById(R.id.textStarRating)
 
-            //Picasso.with(context).load(b.urlimg1).into(kbvLocation);
+            val imageUrl = url + b.urlimg1 + ".png"
+            Picasso.with(context).load(imageUrl).into(kbvLocation);
 
-            textName.text = b.name
-            textSubname.text = b.subname
+            textName.text = b.subname
+            textSubname.text = b.name
             textStar.text = b.starRating.toString()
 
             itemView.setOnClickListener {
@@ -51,9 +52,5 @@ class RoomAdapter(var roomList: ArrayList<Room>, val context: Context): Recycler
             }
         }
     }
-
-}
-
-private fun RequestCreator.into(kbvLocation: TextView) {
 
 }

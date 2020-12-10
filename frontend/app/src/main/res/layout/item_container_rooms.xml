@@ -12,16 +12,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
+        <ImageView
             android:id="@+id/kbvLocation"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/background_star_rating"
             android:gravity="center_horizontal"
             android:orientation="horizontal"
@@ -52,21 +53,22 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:background="@color/dark"
+            android:background="@color/startColor"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="@id/textTitle"/>
 
         <ImageView
             android:id="@+id/imageLocation"
-            android:layout_width="22dp"
-            android:layout_height="22dp"
-            android:layout_marginStart="20dp"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="1dp"
             android:contentDescription="dasdsad"
-            android:src="@drawable/ic_baseline_directions_bike_24"
-            app:tint="#FFFFFF"
+            android:src="@color/startColor"
             app:layout_constraintBottom_toBottomOf="@id/textLocation"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/textLocation"/>
+            app:layout_constraintTop_toTopOf="@id/textLocation"
+            app:layout_constraintVertical_bias="0.416"
+            app:tint="#FFFFFF" />
 
         <TextView
             android:id="@+id/textLocation"
@@ -75,11 +77,13 @@
             android:layout_marginStart="2dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="8dp"
-            android:textColor="#FFFFFF"
-            android:textSize="15sp"
+            android:textColor="@color/dark"
+            android:textSize="25sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/imageLocation"/>
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/imageLocation" />
 
         <TextView
             android:id="@+id/textTitle"
@@ -88,10 +92,9 @@
             android:layout_marginStart="2dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="2dp"
-            android:paddingTop="4dp"
-            android:textColor="#FFFFFF"
-            android:textSize="25sp"
-            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/dark"
+            android:textSize="15sp"
             app:layout_constraintBottom_toTopOf="@id/imageLocation"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

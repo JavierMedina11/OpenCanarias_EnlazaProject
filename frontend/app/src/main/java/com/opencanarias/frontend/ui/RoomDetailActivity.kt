@@ -30,26 +30,29 @@ class RoomDetailActivity : AppCompatActivity() {
         val bicycleServiceImpl = ServiceImpl()
         bicycleServiceImpl.getById(this, bicycleId) { response ->
             run {
-
+                val url = "http://192.168.56.1:8000/img/"
                 val roomSubName: TextView = findViewById(R.id.roomSubName)
                 val roomName: TextView = findViewById(R.id.roomName)
                 val roomDescription: TextView = findViewById(R.id.roomDescription)
+                val roomImg: ImageView = findViewById(R.id.roomImage)
                 val roomImg1: ImageView = findViewById(R.id.roomImg1)
                 val roomImg2: ImageView = findViewById(R.id.roomImg2)
                 val roomImg3: ImageView = findViewById(R.id.roomImg3)
                 val roomPrice: TextView = findViewById(R.id.roomPrice)
 
-                roomSubName.setText(response?.name ?: "")
-                roomName.setText(response?.subname ?: "")
-                roomDescription.setText(response?.description ?: "")
-                // roomImg1.setText(response?.urlimg1 ?: "")
-                // roomImg2.setText(response?.model ?: "")
-                // roomImg3.setText(response?.brand ?: "")
-                roomPrice.setText(response?.price.toString() ?: "")
+                val imageUrl = url + response?.urlimg1 + ".png" ?: ""
+                val imageUrl2 = url + response?.urlimg2 + ".png" ?: ""
+                val imageUrl3 = url + response?.urlimg3 + ".png" ?: ""
+                val imageUrl4 = url + response?.urlimg4 + ".png" ?: ""
+                Picasso.with(this).load(imageUrl).into(roomImg);
+                Picasso.with(this).load(imageUrl2).into(roomImg1);
+                Picasso.with(this).load(imageUrl3).into(roomImg2);
+                Picasso.with(this).load(imageUrl4).into(roomImg3);
 
-                val url = ServiceSingleton.getInstance(this).baseUrl + "/img/bicycle-"
-                val imageUrl = url + (response?.id.toString() ?: "0" ) + ".jpg"
-                //Picasso.with(this).load(imageUrl).into(img);
+                roomSubName.setText(response?.subname ?: "")
+                roomName.setText(response?.name ?: "")
+                roomDescription.setText(response?.description ?: "")
+                roomPrice.setText(response?.price.toString() + "$" ?: "")
             }
         }
     }
