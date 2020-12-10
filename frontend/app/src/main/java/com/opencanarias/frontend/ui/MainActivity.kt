@@ -4,14 +4,11 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
-import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.OrientationHelper
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager2.widget.ViewPager2
 import com.opencanarias.frontend.R
-//import com.opencanarias.frontend.io.IRetrofitService
+import com.opencanarias.frontend.io.IRetrofitService
 import com.opencanarias.frontend.io.ServiceImpl
 import com.opencanarias.frontend.models.Room
 import com.retrofitP.loginimplementation.util.PreferenceHelper
@@ -19,16 +16,16 @@ import com.retrofitP.loginimplementation.util.PreferenceHelper.get
 import com.retrofitP.loginimplementation.util.PreferenceHelper.set
 import com.retrofitP.loginimplementation.util.toast
 import kotlinx.android.synthetic.main.activity_main.*
-//import retrofit2.Call
-//import retrofit2.Callback
-//import retrofit2.Response
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
-/*
+
     private val retrofitService: IRetrofitService by lazy{
         IRetrofitService.create()
     }
-*/
+
     private val preferences by lazy{
         PreferenceHelper.defaultPrefs(this)
     }
@@ -43,6 +40,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val userId = this.intent.getIntExtra("userId", 1)
+
         rooms = ArrayList<Room>()
 
         viewManager = LinearLayoutManager(this, OrientationHelper.HORIZONTAL, false)
@@ -54,10 +53,14 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter = viewAdapter
 
         getAllRooms()
-/*
+
+        buttomUser.setOnClickListener(){
+            goToUserProfile(userId)
+        }
+
         buttonLogout.setOnClickListener(){
             performLogout()
-        }*/
+        }
     }
 
     private fun getAllRooms() {
@@ -71,26 +74,33 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-/*
+
     private fun performLogout(){
         val jwt = preferences["token", ""]
         val call = retrofitService.postLogout("Bearer $jwt")
         call.enqueue(object: Callback<Void> {
             override fun onResponse(call: Call<Void>, response: Response<Void>) {
                 clearSessionPreferences()
-                intent()
+                goToHomeActivity()
             }
             override fun onFailure(call: Call<Void>, t: Throwable) {
                 toast(t.localizedMessage)
             }
         })
     }
-*/
+
     private fun clearSessionPreferences(){
         preferences["token"] = "";
     }
 
-    private fun intent(){
+    private fun goToUserProfile(userId: Int) {
+        val intent= Intent(this, UserProfileActivity::class.java)
+        intent.putExtra("userIdent", userId)
+        startActivity(intent)
+        finish()
+    }
+
+    private fun goToHomeActivity(){
         val intent= Intent(this, HomeActivity::class.java)
         startActivity(intent)
         finish()

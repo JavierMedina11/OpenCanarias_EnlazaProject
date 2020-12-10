@@ -25,6 +25,10 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     $router->post('login', 'AuthController@login');
     // Matches "/api/logout
     $router->post('logout', 'AuthController@logout');
+    // Matches "/api/users
+    $router->get('users', 'UserController@allUsers');
+    // Matches "/api/users/{id}
+    $router->get('users/{id}', 'UserController@singleUser');
     // Matches "/api/rooms
     $router->get('rooms', ['as' => 'room', 'uses' => 'RoomController@index']);
     // Matches "/api/rooms/{id}

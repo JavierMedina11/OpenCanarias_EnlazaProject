@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.RoomDetailActivity"></activity>
+        <activity android:name=".ui.UserProfileActivity"></activity>
+        <activity android:name=".ui.RoomDetailActivity" />
         <activity
             android:name=".ui.RegisterActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
@@ -29,6 +30,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.MainActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

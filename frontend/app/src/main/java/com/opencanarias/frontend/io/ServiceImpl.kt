@@ -86,4 +86,23 @@ class ServiceImpl: IVolleyService {
             { error -> completionHandler() })
         ServiceSingleton.getInstance(context).addToRequestQueue(objectRequest)
     }
+
+    override fun getByIdUser(context: Context, userId: Int, completionHandler: (response: User?) -> Unit) {
+        val path = ServiceSingleton.getInstance(context).baseUrl + "users/" + userId
+        val objectRequest = JsonObjectRequest(Request.Method.GET, path, null,
+            { response ->
+                if(response == null) completionHandler(null)
+                val id = response.getInt("id")
+                val name = response.getString("name")
+                val email = response.getString("email")
+                val password = response.getString("password")
+
+                val user = User(id, name, email, password)
+                completionHandler(user)
+            },
+            { error ->
+                completionHandler(null)
+            })
+        ServiceSingleton.getInstance(context).addToRequestQueue(objectRequest)
+    }
 }

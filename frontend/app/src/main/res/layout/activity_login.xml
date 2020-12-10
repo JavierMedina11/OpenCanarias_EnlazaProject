@@ -99,7 +99,7 @@
     </soup.neumorphism.NeumorphCardView>
 
     <soup.neumorphism.NeumorphButton
-        android:id="@+id/neumorphButton"
+        android:id="@+id/loginButton"
         style="@style/Widget.Neumorph.Button"
         android:layout_width="151dp"
         android:layout_height="72dp"

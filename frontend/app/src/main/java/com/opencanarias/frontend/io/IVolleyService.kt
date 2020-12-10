@@ -12,4 +12,6 @@ interface IVolleyService {
 
     fun registerUser(context: Context, user: User, completionHandler: () -> Unit)
 
+    fun getByIdUser(context: Context, userId: Int, completionHandler: (response: User?) -> Unit)
+
 }

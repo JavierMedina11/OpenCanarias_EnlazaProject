@@ -1,5 +1,5 @@
 package com.opencanarias.frontend.io
-/*
+
 import com.opencanarias.frontend.io.response.LoginResponse
 import retrofit2.Call
 import retrofit2.Retrofit
@@ -18,7 +18,7 @@ interface IRetrofitService {
     @POST("logout")
     fun postLogout(@Header("Authorization") authHeader: String): Call<Void>
 
-/*
+
     @POST("register")
     @Headers("Accept: application/json")
     fun postRegister(
@@ -27,7 +27,7 @@ interface IRetrofitService {
         @Query("password") password: String,
         @Query("password_confirmation") password_confirmation: String
     ): Call<Void>
-*/
+
     companion object Factory {
         private const val BASE_URL = "http://192.168.56.1:8000/api/"
 
@@ -45,9 +45,4 @@ interface IRetrofitService {
             return retrofit.create(IRetrofitService::class.java)
         }
     }
-/*
-    @POST( "login")
-    fun postLogin(@Field("email") email: String , @Field("password") password: String):
-            Call<LoginResponse>
-*/
-}*/
+}
