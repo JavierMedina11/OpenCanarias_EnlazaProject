@@ -13,6 +13,7 @@
     <color name="highligh">#FFFFFF</color>
     <color name="shadow_color">#D9DBDE</color>
     <color name="dark">#31456A</color>
+    <color name="post">#F5F5F5</color>
 
     <color name="startColor">#FFFFFF</color>
     <color name="midColor">#FFFFFF</color>
@@ -20,6 +21,12 @@
     <color name="transparent">#00000000</color>
     <color name="detail">#FF6E00</color>
     <color name="extra">#ECF0F3</color>
+
+
+    <color name="light_shadow_night">#4A4A4A</color>
+    <color name="dark_shadow_night">#161616</color>
+
+
 
 
 </resources>

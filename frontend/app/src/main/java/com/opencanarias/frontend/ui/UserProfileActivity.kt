@@ -1,10 +1,14 @@
 package com.opencanarias.frontend.ui
 
 import android.content.Intent
+import android.graphics.Color
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatDelegate
 import com.opencanarias.frontend.R
 import com.opencanarias.frontend.io.ServiceImpl
 import com.squareup.picasso.Picasso
@@ -18,9 +22,15 @@ class UserProfileActivity : AppCompatActivity() {
 
         val userId = this.intent.getIntExtra("userIdent", 1)
 
+        pruebaButton.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                avatarProfile.setBackgroundResource(R.drawable.defaultgirl)
+            }
+        })
+
         getUser(userId)
 
-        backButton.setOnClickListener {
+        backButtonNeu.setOnClickListener {
             goToMainActivity()
         }
     }
