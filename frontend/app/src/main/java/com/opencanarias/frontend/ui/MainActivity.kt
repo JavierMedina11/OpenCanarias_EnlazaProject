@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val userId = this.intent.getIntExtra("userId", 1)
+        //val userId = this.intent.getIntExtra("userId", 1)
 
         rooms = ArrayList<Room>()
 
@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
         getAllRooms()
 
         buttomUser.setOnClickListener(){
-            goToUserProfile(userId)
+            goToUserProfile()
         }
 
         buttonLogout.setOnClickListener(){
@@ -91,11 +91,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun clearSessionPreferences(){
         preferences["token"] = "";
+        preferences["userDNI"] = "";
     }
 
-    private fun goToUserProfile(userId: Int) {
+    private fun goToUserProfile() {
         val intent= Intent(this, UserProfileActivity::class.java)
-        intent.putExtra("userIdent", userId)
         startActivity(intent)
         finish()
     }

@@ -48,7 +48,7 @@ class LoginActivity : AppCompatActivity() {
                     }
                     if (loginResponse!!.success){
                         val userId = loginResponse.user.id
-                        createSessionPreference(loginResponse!!.token)
+                        createSessionPreference(loginResponse!!.token, userId)
                         goToMainActivity(userId)
                     }else
                         toast(getString(R.string.error_invalid_credentials))
@@ -77,8 +77,9 @@ class LoginActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    private fun createSessionPreference(token: String){
+    private fun createSessionPreference(token: String, userId: Int){
         val preferences = PreferenceHelper.defaultPrefs(this)
         preferences["token"] = token;
+        preferences["userDNI"] = userId;
     }
 }

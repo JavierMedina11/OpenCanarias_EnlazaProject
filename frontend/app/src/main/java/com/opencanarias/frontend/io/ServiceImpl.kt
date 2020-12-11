@@ -5,6 +5,7 @@ import com.android.volley.Request
 import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.JsonObjectRequest
 import com.opencanarias.frontend.io.response.LoginResponse
+import com.opencanarias.frontend.models.Booking
 import com.opencanarias.frontend.models.Room
 import com.opencanarias.frontend.models.User
 import org.json.JSONObject
@@ -74,7 +75,7 @@ class ServiceImpl: IVolleyService {
     }
 
     override fun registerUser(context: Context, user: User, completionHandler: () -> Unit) {
-        val path = ServiceSingleton.getInstance(context).baseUrl + "/register"
+        val path = ServiceSingleton.getInstance(context).baseUrl + "register"
         val bicycleJson: JSONObject = JSONObject()
         bicycleJson.put("id", user.id.toString())
         bicycleJson.put("name", user.name)
@@ -103,6 +104,22 @@ class ServiceImpl: IVolleyService {
             { error ->
                 completionHandler(null)
             })
+        ServiceSingleton.getInstance(context).addToRequestQueue(objectRequest)
+    }
+
+    override fun generateReserve(context: Context, booking: Booking, completionHandler: () -> Unit) {
+        val path = ServiceSingleton.getInstance(context).baseUrl + "booking"
+        val bookingJSON: JSONObject = JSONObject()
+        bookingJSON.put("id", booking.id.toString())
+        bookingJSON.put("check_in", booking.check_in)
+        bookingJSON.put("nights", booking.nights.toString())
+        bookingJSON.put("diet", booking.diet)
+        bookingJSON.put("id_user", booking.id_user)
+        bookingJSON.put("id_room", booking.id_room)
+
+        val objectRequest = JsonObjectRequest(Request.Method.POST, path, bookingJSON,
+            { response -> completionHandler() },
+            { error -> completionHandler() })
         ServiceSingleton.getInstance(context).addToRequestQueue(objectRequest)
     }
 }

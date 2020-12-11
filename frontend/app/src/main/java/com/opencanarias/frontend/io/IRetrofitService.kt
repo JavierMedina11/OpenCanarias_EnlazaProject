@@ -18,16 +18,6 @@ interface IRetrofitService {
     @POST("logout")
     fun postLogout(@Header("Authorization") authHeader: String): Call<Void>
 
-
-    @POST("register")
-    @Headers("Accept: application/json")
-    fun postRegister(
-        @Query("name") name: String,
-        @Query("email") email: String,
-        @Query("password") password: String,
-        @Query("password_confirmation") password_confirmation: String
-    ): Call<Void>
-
     companion object Factory {
         private const val BASE_URL = "http://192.168.56.1:8000/api/"
 

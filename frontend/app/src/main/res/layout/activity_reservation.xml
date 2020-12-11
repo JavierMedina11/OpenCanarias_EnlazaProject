@@ -61,7 +61,7 @@
     </soup.neumorphism.NeumorphCardView>
 
     <Button
-        android:id="@+id/buttonClosePopUp"
+        android:id="@+id/buttonClosePopUp2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -72,28 +72,42 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <RadioButton
-        android:id="@+id/radioButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="216dp"
-        android:text="Full Pension"
-        android:textColor="@color/dark"
+    <RadioGroup
+        android:id="@+id/groupRadio"
+        android:layout_width="114dp"
+        android:layout_height="117dp"
+        android:layout_marginBottom="132dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.218"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent">
 
-    <RadioButton
-        android:id="@+id/radioButton2"
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Full Pension"
+            android:textColor="@color/dark"/>
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Half Pension"
+            android:textColor="@color/dark"/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/te"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="216dp"
-        android:text="Half Pension"
+        android:text="TextView"
         android:textColor="@color/dark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.761"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.096" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

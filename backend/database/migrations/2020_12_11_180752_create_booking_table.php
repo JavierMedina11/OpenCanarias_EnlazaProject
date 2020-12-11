@@ -15,9 +15,9 @@ class CreateBookingTable extends Migration
     {
         Schema::create('booking', function (Blueprint $table) {
             $table->id();
-            $table->date('check_in');
+            $table->string('check_in');
             $table->integer('nights');
-            $table->integer('diet');
+            $table->String('diet');
             $table->unsignedBigInteger("id_user");
             $table->foreign("id_user")->references('id')->on('users');
             $table->unsignedBigInteger("id_room");

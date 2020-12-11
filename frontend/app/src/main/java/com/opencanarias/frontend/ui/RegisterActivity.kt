@@ -35,17 +35,16 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun performRegister(){
-        val name = layout_name.toString().trim()
-        val email = layout_emailR.toString().trim()
-        val password = layout_passwordR.toString()
-        val passwordConfirmation = layout_passwordConfirmation.toString()
+        val name = layout_name.text.toString().trim()
+        val email = layout_emailR.text.toString().trim()
+        val password = layout_passwordR.text.toString()
+        val passwordConfirmation = layout_passwordConfirmation.text.toString()
 
         if(name.isEmpty() || email.isEmpty() || password.isEmpty() || passwordConfirmation.isEmpty()){
             toast(getString(R.string.error_register_empty_fields))
             return
-        }
-        if(password != passwordConfirmation){
-            toast(getString(R.string.error_register_paswords_do_not_match))
+        }else if(password!=passwordConfirmation){
+            toast("Las contraseñas no coincidenS")
             return
         }
         val userId = 30;

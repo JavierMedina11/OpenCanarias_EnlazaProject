@@ -1,6 +1,7 @@
 package com.opencanarias.frontend.io
 
 import android.content.Context
+import com.opencanarias.frontend.models.Booking
 import com.opencanarias.frontend.models.Room
 import com.opencanarias.frontend.models.User
 
@@ -13,5 +14,7 @@ interface IVolleyService {
     fun registerUser(context: Context, user: User, completionHandler: () -> Unit)
 
     fun getByIdUser(context: Context, userId: Int, completionHandler: (response: User?) -> Unit)
+
+    fun generateReserve(context: Context, booking: Booking, completionHandler: () -> Unit)
 
 }

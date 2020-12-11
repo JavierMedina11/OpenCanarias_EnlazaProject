@@ -6,14 +6,9 @@ use Illuminate\Http\Request;
 use  App\User;
 use Illuminate\Support\Facades\Auth;
 
-class AuthController extends Controller
-{
-    /**
-     * Store a new user.
-     *
-     * @param  Request  $request
-     * @return Response
-     */
+class AuthController extends Controller{
+
+
     public function register(Request $request)
     {
         try {
@@ -40,7 +35,6 @@ class AuthController extends Controller
         $credentials = $request->only(['email', 'password']);
 
         if ($token = Auth::attempt($credentials)) {
-            //return response()->json(['message' => 'Unauthorized'], 401);
             $user = Auth::guard('api')->user();
             $success = true;
             return compact('success', 'user', 'token');

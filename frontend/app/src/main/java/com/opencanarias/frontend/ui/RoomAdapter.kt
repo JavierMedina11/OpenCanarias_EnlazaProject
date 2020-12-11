@@ -11,10 +11,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.opencanarias.frontend.R
 import com.opencanarias.frontend.models.Room
+import com.retrofitP.loginimplementation.util.PreferenceHelper
 import com.squareup.picasso.Picasso
 
 class RoomAdapter(var roomList: ArrayList<Room>, val context: Context): RecyclerView.Adapter<RoomAdapter.ViewHolder>() {
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.item_container_rooms, parent, false)
         return ViewHolder(v)

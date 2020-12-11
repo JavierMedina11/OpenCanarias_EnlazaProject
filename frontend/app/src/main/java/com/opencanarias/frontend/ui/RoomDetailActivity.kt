@@ -1,17 +1,9 @@
 package com.opencanarias.frontend.ui
 
-import android.app.DatePickerDialog
 import android.content.Intent
-import android.icu.util.Calendar
-import android.os.Build
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.opencanarias.frontend.R
 import com.opencanarias.frontend.io.ServiceImpl
@@ -36,12 +28,13 @@ class RoomDetailActivity : AppCompatActivity() {
         if(state == "Showing") getRoom(roomId)
 
         roomBook.setOnClickListener {
-            goToReservationActivity()
+            goToReservationActivity(roomId)
         }
     }
 
-    private fun goToReservationActivity(){
+    private fun goToReservationActivity(roomId: Int) {
         val intent= Intent(this, ReservationActivity::class.java)
+        intent.putExtra("roomId", roomId)
         startActivity(intent)
     }
 

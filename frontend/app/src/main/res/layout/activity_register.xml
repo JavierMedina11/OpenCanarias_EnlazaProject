@@ -105,6 +105,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:hint="Password"
+            android:inputType="textPassword"
             android:textColor="@color/dark"
             android:textColorHint="@color/endColor" />
     </soup.neumorphism.NeumorphCardView>
@@ -182,6 +183,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:hint="Password"
+            android:inputType="textPassword"
             android:textColor="@color/dark"
             android:textColorHint="@color/endColor" />
     </soup.neumorphism.NeumorphCardView>
