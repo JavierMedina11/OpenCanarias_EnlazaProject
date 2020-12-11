@@ -36,5 +36,11 @@
     <string name="menu_slideshow">Slideshow</string>
     <string name="title_activity_menu_drawer">MenuDrawer</string>
 
+    <string name="date_format">%1$d-%2$s-%3$s</string>
+
+    <string-array name="diets_options">
+        <item>Full board</item>
+        <item>Half pension</item>
+    </string-array>
 
 </resources>

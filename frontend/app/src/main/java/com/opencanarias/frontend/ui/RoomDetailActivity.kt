@@ -1,14 +1,24 @@
 package com.opencanarias.frontend.ui
 
-import androidx.appcompat.app.AppCompatActivity
+import android.app.DatePickerDialog
+import android.content.Intent
+import android.icu.util.Calendar
+import android.os.Build
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-import com.google.android.material.textfield.TextInputEditText
+import android.widget.Toast
+import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import com.opencanarias.frontend.R
 import com.opencanarias.frontend.io.ServiceImpl
-import com.opencanarias.frontend.io.ServiceSingleton
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.activity_room_detail.*
+
+
 
 class RoomDetailActivity : AppCompatActivity() {
     private lateinit var state: String
@@ -24,6 +34,15 @@ class RoomDetailActivity : AppCompatActivity() {
         val roomId = this.intent.getIntExtra("roomId", 1)
 
         if(state == "Showing") getRoom(roomId)
+
+        roomBook.setOnClickListener {
+            goToReservationActivity()
+        }
+    }
+
+    private fun goToReservationActivity(){
+        val intent= Intent(this, ReservationActivity::class.java)
+        startActivity(intent)
     }
 
     private fun getRoom(bicycleId: Int) {
