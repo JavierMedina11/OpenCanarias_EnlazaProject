@@ -15,9 +15,14 @@ import com.opencanarias.frontend.models.Booking
 import com.retrofitP.loginimplementation.util.PreferenceHelper
 import com.retrofitP.loginimplementation.util.PreferenceHelper.set
 import kotlinx.android.synthetic.main.activity_reservation.*
-import kotlinx.android.synthetic.main.activity_user_profile.*
+import kotlinx.android.synthetic.main.activity_update_reservation.*
+import kotlinx.android.synthetic.main.activity_update_reservation.groupRadio
+import kotlinx.android.synthetic.main.activity_update_reservation.radioButton
+import kotlinx.android.synthetic.main.activity_update_reservation.radioButton2
+import kotlinx.android.synthetic.main.activity_update_reservation.reservationDate
+import kotlinx.android.synthetic.main.activity_update_reservation.reservationDate2
 
-class ReservationActivity : AppCompatActivity() {
+class UpdateReservationActivity : AppCompatActivity() {
 
     private val preferences by lazy{
         PreferenceHelper.defaultPrefs(this)
@@ -31,12 +36,17 @@ class ReservationActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_reservation)
+        setContentView(R.layout.activity_update_reservation)
 
-        val state = this.intent.getStringExtra("state").toString()
-        val userId = preferences.getInt("userDNI", 1)
-        val roomId = this.intent.getIntExtra("roomId", 1)
+        val bookingId = this.intent.getIntExtra("bookingId", 1)
+        val bookingCheckIn = this.intent.getIntExtra("bookingCheckIn", 1)
+        val bookingCheckOut = this.intent.getIntExtra("bookingCheckOut", 1)
+        val bookingUserId = this.intent.getIntExtra("bookingUserId", 1)
+        val bookingIdRoom = this.intent.getIntExtra("bookingRoomId", 1)
         val dietValue = preferences.getString("dietValue", "Full Pension").toString()
+
+        reservationDate.setText(bookingCheckIn.toString())
+        reservationDate2.setText(bookingCheckOut.toString())
 
         groupRadio.clearCheck()
         groupRadio.setOnCheckedChangeListener(RadioGroup.OnCheckedChangeListener(){ radioGroup: RadioGroup, i: Int ->
@@ -48,19 +58,18 @@ class ReservationActivity : AppCompatActivity() {
                 radioButton.isChecked = false
             }
         })
-        val booking = Booking(10, reservationDate.text.toString(), reservationDate2.text.toString(), dietValue, userId, roomId)
-        createButton.setOnClickListener{
-            createReserve(booking)
+        val booking = Booking(bookingId, reservationDate.text.toString(), reservationDate2.text.toString(), dietValue, bookingUserId, bookingIdRoom)
+        updateButton.setOnClickListener {
+            updateBooking(booking)
         }
     }
 
-    fun createReserve(booking: Booking){
-        val serviceImpl = ServiceImpl()
-        serviceImpl.generateReserve(this, booking) { ->
+    private fun updateBooking(booking: Booking) {
+        val bookingServiceImpl = ServiceImpl()
+        bookingServiceImpl.updateReserve(this, booking) { ->
             run {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
-                finish()
             }
         }
     }

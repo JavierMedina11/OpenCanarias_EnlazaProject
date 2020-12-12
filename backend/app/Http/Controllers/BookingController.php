@@ -18,11 +18,15 @@ class BookingController{
         return Booking::findOrFail($id);
     }
 
+    public function showReserv($id_user){
+        return Booking::all()->where('id_user', $id_user);;
+    }
+
     //POST/*
     public function createPost(Request $request){
         $room = new Booking();
         $room->check_in = $request->check_in;
-        $room->nights = $request->nights;
+        $room->check_out = $request->check_out;
         $room->diet = $request->diet;
         $room->id_user = $request->id_user;
         $room->id_room = $request->id_room;
@@ -35,7 +39,7 @@ class BookingController{
     public function updatePost(Request $request){
         $room = Booking::where('id', $request->id)->first();
         $room->check_in = $request->check_in;
-        $room->nights = $request->nights;
+        $room->check_out = $request->check_out;
         $room->diet = $request->diet;
         $room->id_user = $request->id_user;
         $room->id_room = $request->id_room;

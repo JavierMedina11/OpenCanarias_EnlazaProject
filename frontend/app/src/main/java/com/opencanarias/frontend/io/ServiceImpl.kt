@@ -1,6 +1,7 @@
 package com.opencanarias.frontend.io
 
 import android.content.Context
+import android.util.Log
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.JsonObjectRequest
@@ -8,6 +9,7 @@ import com.opencanarias.frontend.io.response.LoginResponse
 import com.opencanarias.frontend.models.Booking
 import com.opencanarias.frontend.models.Room
 import com.opencanarias.frontend.models.User
+import org.json.JSONArray
 import org.json.JSONObject
 
 class ServiceImpl: IVolleyService {
@@ -41,6 +43,53 @@ class ServiceImpl: IVolleyService {
             { error ->
                 completionHandler(ArrayList<Room>())
             })
+        ServiceSingleton.getInstance(context).addToRequestQueue(arrayRequest)
+    }
+
+    override fun getBookings(context: Context, completionHandler: (response: ArrayList<Booking>?) -> Unit) {
+        val path = ServiceSingleton.getInstance(context).baseUrl + "booking"
+        val arrayRequest = JsonArrayRequest(Request.Method.GET, path, null,
+                { response ->
+                    var bookings: ArrayList<Booking> = ArrayList()
+                    for (i in 0 until response.length()) {
+                        val booking = response.getJSONObject(i)
+                        val id = booking.getInt("id")
+                        val check_in = booking.getString("check_in")
+                        val check_out = booking.getString("check_out")
+                        val diet = booking.getString("diet")
+                        val id_user = booking.getInt("id_user")
+                        val id_room = booking.getInt("id_room")
+                        bookings.add(Booking(id, check_in, check_out, diet, id_user, id_room))
+                    }
+                    completionHandler(bookings)
+                },
+                { error ->
+                    completionHandler(ArrayList<Booking>())
+                })
+        ServiceSingleton.getInstance(context).addToRequestQueue(arrayRequest)
+    }
+
+    override fun getBooking(context: Context, userId: Int, completionHandler: (response: ArrayList<Booking>?) -> Unit) {
+        val path = ServiceSingleton.getInstance(context).baseUrl + "usereserve/" + userId
+        val arrayRequest = JsonArrayRequest(Request.Method.GET, path, null,
+                { response ->
+                    var bookings: ArrayList<Booking> = ArrayList()
+                    val bookingArray: JSONArray = response.getJSONArray(1)
+                    for (i in 0 until bookingArray.length()) {
+                        val booking = response.getJSONObject(i)
+                        val id = booking.getInt("id")
+                        val check_in = booking.getString("check_in")
+                        val check_out = booking.getString("check_out")
+                        val diet = booking.getString("diet")
+                        val id_user = booking.getInt("id_user")
+                        val id_room = booking.getInt("id_room")
+                        bookings.add(Booking(id, check_in, check_out, diet, id_user, id_room))
+                    }
+                    completionHandler(bookings)
+                },
+                { error ->
+                    completionHandler(ArrayList<Booking>())
+                })
         ServiceSingleton.getInstance(context).addToRequestQueue(arrayRequest)
     }
 
@@ -112,14 +161,48 @@ class ServiceImpl: IVolleyService {
         val bookingJSON: JSONObject = JSONObject()
         bookingJSON.put("id", booking.id.toString())
         bookingJSON.put("check_in", booking.check_in)
-        bookingJSON.put("nights", booking.nights.toString())
+        bookingJSON.put("check_out", booking.check_out)
         bookingJSON.put("diet", booking.diet)
         bookingJSON.put("id_user", booking.id_user)
         bookingJSON.put("id_room", booking.id_room)
 
         val objectRequest = JsonObjectRequest(Request.Method.POST, path, bookingJSON,
-            { response -> completionHandler() },
-            { error -> completionHandler() })
+                { response -> completionHandler() },
+                { error -> completionHandler() })
         ServiceSingleton.getInstance(context).addToRequestQueue(objectRequest)
     }
+
+    override fun deleteById(context: Context, roomId: Int, completionHandler: () -> Unit) {
+        val path = ServiceSingleton.getInstance(context).baseUrl + "booking/" + roomId
+        val objectRequest = JsonObjectRequest(Request.Method.DELETE, path, null,
+                { response ->
+                    Log.v("Hola caracola", "se borró")
+                    completionHandler()
+                },
+                { error ->
+                    Log.v("Hola caracola", "dió error")
+                    completionHandler()
+                })
+        ServiceSingleton.getInstance(context).addToRequestQueue(objectRequest)
+    }
+
+    override fun updateReserve(context: Context, booking: Booking, completionHandler: () -> Unit) {
+        val path = ServiceSingleton.getInstance(context).baseUrl + "booking/" + booking.id
+            val bookingJSON: JSONObject = JSONObject()
+                bookingJSON.put("id", booking.id.toString())
+                bookingJSON.put("check_in", booking.check_in)
+                bookingJSON.put("check_out", booking.check_out)
+                bookingJSON.put("diet", booking.diet)
+                bookingJSON.put("id_user", booking.id_user)
+                bookingJSON.put("id_room", booking.id_room)
+
+            val objectRequest = JsonObjectRequest(Request.Method.PUT, path, bookingJSON,
+                    { response ->
+                        completionHandler()
+                    },
+                    { error ->
+                        completionHandler()
+                    })
+        ServiceSingleton.getInstance(context).addToRequestQueue(objectRequest)
+        }
 }

@@ -35,6 +35,7 @@ class RoomDetailActivity : AppCompatActivity() {
     private fun goToReservationActivity(roomId: Int) {
         val intent= Intent(this, ReservationActivity::class.java)
         intent.putExtra("roomId", roomId)
+        intent.putExtra("state", "Create")
         startActivity(intent)
     }
 
