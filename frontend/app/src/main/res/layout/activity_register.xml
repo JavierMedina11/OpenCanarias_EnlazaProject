@@ -7,48 +7,28 @@
     android:background="@drawable/bg_forms"
     tools:context=".ui.RegisterActivity">
 
-    <TextView
-        android:id="@+id/tv_welcome"
+    <soup.neumorphism.NeumorphTextView
+        android:id="@+id/tv_welcome2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:fontFamily="sans-serif-light"
-        android:text="Welcome"
-        android:textColor="@color/dark"
-        android:textSize="50sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_gravity="center"
+        android:layout_marginTop="76dp"
+        android:text="Register"
+        android:textColor="@color/startColor"
+        android:textSize="55sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.212"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/tv_signup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tv_welcome"
-        android:layout_alignStart="@id/tv_welcome"
-        android:layout_alignLeft="@id/tv_welcome"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="64dp"
-        android:fontFamily="sans-serif-light"
-        android:text="@string/signup_tv"
-        android:textColor="@color/dark"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_welcome"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <soup.neumorphism.NeumorphCardView
         android:id="@+id/neumorphCardView2"
         style="@style/Widget.Neumorph.CardView"
         android:layout_width="386dp"
         android:layout_height="78dp"
-        android:layout_marginBottom="412dp"
+        android:layout_marginBottom="460dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.64"
+        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
         app:neumorph_shapeType="pressed"
         tools:ignore="MissingConstraints">
@@ -68,11 +48,13 @@
         style="@style/Widget.Neumorph.CardView"
         android:layout_width="386dp"
         android:layout_height="78dp"
-        android:layout_marginBottom="328dp"
+        android:layout_marginBottom="368dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.64"
+        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/neumorphCardView2"
+        app:layout_constraintVertical_bias="1.0"
         app:neumorph_shapeType="pressed"
         tools:ignore="MissingConstraints">
 
@@ -91,11 +73,14 @@
         style="@style/Widget.Neumorph.CardView"
         android:layout_width="386dp"
         android:layout_height="78dp"
-        android:layout_marginBottom="248dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="276dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.64"
+        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/neumorphCardView3"
+        app:layout_constraintVertical_bias="1.0"
         app:neumorph_shapeType="pressed"
         tools:ignore="MissingConstraints">
 
@@ -117,13 +102,15 @@
         android:layout_height="72dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="104dp"
+        android:layout_marginBottom="88dp"
         android:gravity="center"
         android:text="Register"
         android:textColor="@color/dark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:neumorph_shadowColorDark="#ababab"
+        app:neumorph_shadowColorLight="#e7e7e7"
         app:neumorph_shapeType="flat"
         tools:ignore="MissingConstraints" />
 
@@ -132,7 +119,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="72dp"
+        android:layout_marginBottom="56dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -169,11 +156,13 @@
         style="@style/Widget.Neumorph.CardView"
         android:layout_width="386dp"
         android:layout_height="78dp"
-        android:layout_marginBottom="168dp"
+        android:layout_marginBottom="184dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/neumorphCardView4"
+        app:layout_constraintVertical_bias="1.0"
         app:neumorph_shapeType="pressed"
         tools:ignore="MissingConstraints">
 
@@ -182,7 +171,7 @@
             android:layout_width="315dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:hint="Password"
+            android:hint="Confirm Password"
             android:inputType="textPassword"
             android:textColor="@color/dark"
             android:textColorHint="@color/endColor" />

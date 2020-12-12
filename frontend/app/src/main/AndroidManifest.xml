@@ -16,11 +16,7 @@
         <activity android:name=".ui.UpdateReservationActivity"></activity>
         <activity android:name=".ui.ReservationActivity" />
         <activity android:name=".ui.UserProfileActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".ui.RoomDetailActivity" />
         <activity
@@ -32,7 +28,11 @@
         <activity
             android:name=".ui.HomeActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".ui.MainActivity" />
 

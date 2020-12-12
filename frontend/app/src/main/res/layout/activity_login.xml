@@ -7,31 +7,30 @@
     android:background="@drawable/bg_forms"
     tools:context=".ui.LoginActivity">
 
+
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="359dp"
-        android:layout_height="269dp"
-        android:layout_marginTop="80dp"
+        android:layout_width="323dp"
+        android:layout_height="225dp"
+        android:layout_marginTop="48dp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/imglogin" />
 
-    <TextView
+    <soup.neumorphism.NeumorphTextView
         android:id="@+id/tv_welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:fontFamily="sans-serif-light"
+        android:layout_gravity="center"
+        android:layout_marginTop="284dp"
         android:text="Welcome"
-        android:textColor="@color/dark"
-        android:textSize="50sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/startColor"
+        android:textSize="55sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.513"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_signup"
@@ -40,8 +39,8 @@
         android:layout_below="@id/tv_welcome"
         android:layout_alignStart="@id/tv_welcome"
         android:layout_alignLeft="@id/tv_welcome"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="67dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="64dp"
         android:fontFamily="sans-serif-light"
         android:text="@string/signup_tv"
         android:textColor="@color/dark"
@@ -108,6 +107,8 @@
         android:layout_marginBottom="104dp"
         android:gravity="center"
         android:text="Login"
+        app:neumorph_shadowColorLight="#e7e7e7"
+        app:neumorph_shadowColorDark="#ababab"
         android:textColor="@color/dark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

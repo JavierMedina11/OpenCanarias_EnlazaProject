@@ -35,7 +35,6 @@
         android:layout_height="57dp"
         android:layout_gravity="center"
         android:layout_marginTop="92dp"
-        android:fontFamily="@font/ubuntu_bold"
         android:text="Discover"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,46 +42,46 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textViewDiscover"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/ubuntu_bold"
-        android:text=""
-        android:textColor="@color/dark"
-        android:textSize="45sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="152dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.13" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/registerGo"
-        android:layout_width="162dp"
-        android:layout_height="61dp"
-        android:layout_marginEnd="120dp"
-        android:layout_marginBottom="520dp"
-        android:fontFamily="@font/quicksand_light"
-        android:text="            what are you looking for?"
-        android:textColor="@color/dark"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginBottom="556dp"
+            android:fontFamily="@font/ubuntu_bold"
+            android:text="Hello,"
+            android:gravity="center"
+            android:textColor="@color/detail"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="136dp"
-        android:layout_marginBottom="556dp"
-        android:fontFamily="@font/ubuntu_bold"
-        android:text="Hello,"
-        android:textColor="@color/detail"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/registerGo"
+            android:layout_width="230dp"
+            android:layout_height="61dp"
+            android:fontFamily="@font/quicksand_light"
+            android:gravity="center"
+            android:text="what are you looking for?"
+            android:textColor="@color/dark"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+    </LinearLayout>
 
     <soup.neumorphism.NeumorphCardView
         android:id="@+id/neumorphCardView3"
@@ -169,11 +168,9 @@
         app:layout_constraintStart_toStartOf="parent" />
 
 
-
-
     <me.ibrahimsn.lib.SmoothBottomBar
         android:id="@+id/bottomBar"
-        android:layout_width="427dp"
+        android:layout_width="wrap_content"
         android:layout_height="58dp"
         app:iconSize="20dp"
         app:iconTint="#757575"
@@ -181,10 +178,11 @@
         app:indicatorColor="@color/dark"
         app:indicatorRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/navigation_menu"
         app:textColor="@color/startColor"
         app:textSize="15sp"
-        tools:layout_editor_absoluteX="-9dp"
         tools:ignore="MissingConstraints" />
 
     <soup.neumorphism.NeumorphImageButton
@@ -195,6 +193,7 @@
         android:layout_marginEnd="16dp"
         android:scaleType="center"
         android:src="@drawable/usercount"
+        app:neumorph_shapeType="pressed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -205,6 +204,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
         android:scaleType="center"
+        app:neumorph_shapeType="pressed"
         android:src="@drawable/logout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
