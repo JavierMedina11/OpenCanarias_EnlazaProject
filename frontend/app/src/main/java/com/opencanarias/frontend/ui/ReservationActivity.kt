@@ -48,8 +48,9 @@ class ReservationActivity : AppCompatActivity() {
                 radioButton.isChecked = false
             }
         })
-        val booking = Booking(10, reservationDate.text.toString(), reservationDate2.text.toString(), dietValue, userId, roomId)
+
         createButton.setOnClickListener{
+            val booking = Booking(10, reservationDate.text.toString(), reservationDate2.text.toString(), dietValue, userId, roomId)
             createReserve(booking)
         }
     }

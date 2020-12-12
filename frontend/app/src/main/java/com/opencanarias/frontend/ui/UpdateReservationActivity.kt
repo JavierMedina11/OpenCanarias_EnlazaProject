@@ -19,8 +19,6 @@ import kotlinx.android.synthetic.main.activity_update_reservation.*
 import kotlinx.android.synthetic.main.activity_update_reservation.groupRadio
 import kotlinx.android.synthetic.main.activity_update_reservation.radioButton
 import kotlinx.android.synthetic.main.activity_update_reservation.radioButton2
-import kotlinx.android.synthetic.main.activity_update_reservation.reservationDate
-import kotlinx.android.synthetic.main.activity_update_reservation.reservationDate2
 
 class UpdateReservationActivity : AppCompatActivity() {
 
@@ -29,24 +27,19 @@ class UpdateReservationActivity : AppCompatActivity() {
     }
 
     @RequiresApi(Build.VERSION_CODES.N)
-    private val selectedCalendar: Calendar = Calendar.getInstance()
+    private val select: Calendar = Calendar.getInstance()
 
     @RequiresApi(Build.VERSION_CODES.N)
-    private val selectedCalendar2: Calendar = Calendar.getInstance()
+    private val select2: Calendar = Calendar.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_update_reservation)
 
         val bookingId = this.intent.getIntExtra("bookingId", 1)
-        val bookingCheckIn = this.intent.getIntExtra("bookingCheckIn", 1)
-        val bookingCheckOut = this.intent.getIntExtra("bookingCheckOut", 1)
         val bookingUserId = this.intent.getIntExtra("bookingUserId", 1)
         val bookingIdRoom = this.intent.getIntExtra("bookingRoomId", 1)
         val dietValue = preferences.getString("dietValue", "Full Pension").toString()
-
-        reservationDate.setText(bookingCheckIn.toString())
-        reservationDate2.setText(bookingCheckOut.toString())
 
         groupRadio.clearCheck()
         groupRadio.setOnCheckedChangeListener(RadioGroup.OnCheckedChangeListener(){ radioGroup: RadioGroup, i: Int ->
@@ -58,8 +51,8 @@ class UpdateReservationActivity : AppCompatActivity() {
                 radioButton.isChecked = false
             }
         })
-        val booking = Booking(bookingId, reservationDate.text.toString(), reservationDate2.text.toString(), dietValue, bookingUserId, bookingIdRoom)
         updateButton.setOnClickListener {
+            val booking = Booking(bookingId, updateDate.text.toString(), updateDate2.text.toString(), dietValue, bookingUserId, bookingIdRoom)
             updateBooking(booking)
         }
     }
@@ -74,17 +67,16 @@ class UpdateReservationActivity : AppCompatActivity() {
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
-    fun onClickSheduleDate(v: View?){
+    @RequiresApi(Build.VERSION_CODES.N)
+    fun onClickUpdateDate(v: View?){
 
-        val year = selectedCalendar.get(Calendar.YEAR)
-        val month = selectedCalendar.get(Calendar.MONTH)
-        val dayOfMonth = selectedCalendar.get(Calendar.DAY_OF_MONTH)
+        val year = select.get(Calendar.YEAR)
+        val month = select.get(Calendar.MONTH)
+        val dayOfMonth = select.get(Calendar.DAY_OF_MONTH)
 
         val listener = DatePickerDialog.OnDateSetListener{ datePicker, y, m, d ->
-            //Toast.makeText(this, "$y-$m-$d", Toast.LENGTH_SHORT).show()
-            selectedCalendar.set(y, m, d)
-            reservationDate.setText(resources.getString(R.string.date_format, y, (m+1).twoDigits(), d.twoDigits()))
+            select.set(y, m, d)
+            updateDate.setText(resources.getString(R.string.date_format, y, (m+1).twoDigits(), d.twoDigits()))
         }
 
         // new dialog
@@ -94,7 +86,7 @@ class UpdateReservationActivity : AppCompatActivity() {
         // set limits
         val calendar: Calendar = Calendar.getInstance()
         calendar.add(Calendar.DAY_OF_MONTH, 1)
-        datePicker.minDate = selectedCalendar.timeInMillis
+        datePicker.minDate = select.timeInMillis
         calendar.add(Calendar.DAY_OF_MONTH, 29)
         datePicker.maxDate = calendar.timeInMillis
 
@@ -102,17 +94,16 @@ class UpdateReservationActivity : AppCompatActivity() {
         datePickerDialog.show()
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
-    fun onClickSheduleDate2(v: View?){
+    @RequiresApi(Build.VERSION_CODES.N)
+    fun onClickUpdateDate2(v: View?){
 
-        val year = selectedCalendar2.get(Calendar.YEAR)
-        val month = selectedCalendar2.get(Calendar.MONTH)
-        val dayOfMonth = selectedCalendar2.get(Calendar.DAY_OF_MONTH)
+        val year = select2.get(Calendar.YEAR)
+        val month = select2.get(Calendar.MONTH)
+        val dayOfMonth = select2.get(Calendar.DAY_OF_MONTH)
 
         val listener = DatePickerDialog.OnDateSetListener{ datePicker, y, m, d ->
-            //Toast.makeText(this, "$y-$m-$d", Toast.LENGTH_SHORT).show()
-            selectedCalendar2.set(y, m, d)
-            reservationDate2.setText(resources.getString(R.string.date_format, y, (m+1).twoDigits(), d.twoDigits()))
+            select2.set(y, m, d)
+            updateDate2.setText(resources.getString(R.string.date_format, y, (m+1).twoDigits(), d.twoDigits()))
         }
 
         // new dialog
@@ -122,14 +113,14 @@ class UpdateReservationActivity : AppCompatActivity() {
         // set limits
         val calendar: Calendar = Calendar.getInstance()
         calendar.add(Calendar.DAY_OF_MONTH, 1)
-        datePicker.minDate = selectedCalendar2.timeInMillis
+        datePicker.minDate = select2.timeInMillis
         calendar.add(Calendar.DAY_OF_MONTH, 29)
         datePicker.maxDate = calendar.timeInMillis
 
         // show dialog
         datePickerDialog.show()
     }
-
     private fun Int.twoDigits()
             = if (this>=10) this.toString() else "0$this"
+
 }

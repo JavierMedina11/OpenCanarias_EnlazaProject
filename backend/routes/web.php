@@ -39,7 +39,7 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     $router->get('booking/{id}', ['as' => 'booking.show', 'uses' => 'BookingController@show']);
     // Matches "/api/booking/{id}"
     $router->delete('booking/{id}', ['as' => 'booking.delete', 'uses' => 'BookingController@delete']);
-    // Matches "/api/usereserve/{id_user}"
+    // Matches "/api/booking/{id}"
     $router->put('booking/{id}', ['as' => 'booking.updatePost', 'uses' => 'BookingController@updatePost']);
     // Matches "/api/booking"
     $router->post('booking', ['as' => 'booking.createPost', 'uses' => 'BookingController@createPost']);

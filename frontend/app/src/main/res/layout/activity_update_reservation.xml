@@ -22,7 +22,7 @@
         tools:ignore="MissingConstraints">
 
         <EditText
-            android:id="@+id/reservationDate"
+            android:id="@+id/updateDate"
             android:layout_width="315dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -30,7 +30,7 @@
             android:focusable="false"
             android:hint="Check In"
             android:inputType="date"
-            android:onClick="onClickSheduleDate"
+            android:onClick="onClickUpdateDate"
             android:textColor="@color/dark"
             android:textColorHint="@color/endColor" />
     </soup.neumorphism.NeumorphCardView>
@@ -99,7 +99,7 @@
     </RadioGroup>
 
     <TextView
-        android:id="@+id/te"
+        android:id="@+id/pruebaDefinitiva"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -125,7 +125,7 @@
         tools:ignore="MissingConstraints">
 
         <EditText
-            android:id="@+id/reservationDate2"
+            android:id="@+id/updateDate2"
             android:layout_width="315dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -133,7 +133,7 @@
             android:focusable="false"
             android:hint="Check In"
             android:inputType="date"
-            android:onClick="onClickSheduleDate2"
+            android:onClick="onClickUpdateDate2"
             android:textColor="@color/dark"
             android:textColorHint="@color/endColor" />
     </soup.neumorphism.NeumorphCardView>

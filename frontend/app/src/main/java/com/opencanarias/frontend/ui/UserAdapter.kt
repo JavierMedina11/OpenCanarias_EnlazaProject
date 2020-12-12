@@ -13,8 +13,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.opencanarias.frontend.R
 import com.opencanarias.frontend.io.ServiceImpl
 import com.opencanarias.frontend.models.Booking
+import com.retrofitP.loginimplementation.util.PreferenceHelper
+import com.retrofitP.loginimplementation.util.PreferenceHelper.set
 
 class UserAdapter(var bookingList: ArrayList<Booking>, val context: Context): RecyclerView.Adapter<UserAdapter.ViewHolder>() {
+
+    private val preferences by lazy{
+        PreferenceHelper.defaultPrefs(context)
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.item_container_booking, parent, false)
         return ViewHolder(v)
@@ -41,10 +47,11 @@ class UserAdapter(var bookingList: ArrayList<Booking>, val context: Context): Re
             textStar.text = b.diet
 
             kbv.setOnClickListener{
+                val preferences = PreferenceHelper.defaultPrefs(context)
                 val intent = Intent(context, UpdateReservationActivity::class.java)
                 intent.putExtra("bookingId", b.id)
-                intent.putExtra("bookingCheckIn", b.check_in)
-                intent.putExtra("bookingCheckOut", b.check_out)
+                preferences["bookingCheckIn"] = b.check_in;
+                preferences["bookingCheckOut"] = b.check_out;
                 intent.putExtra("bookingDiet", b.diet)
                 intent.putExtra("bookingUserId", b.id_user)
                 intent.putExtra("bookingRoomId", b.id_room)
