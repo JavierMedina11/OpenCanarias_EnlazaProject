@@ -13,7 +13,8 @@
     <color name="highligh">#FFFFFF</color>
     <color name="shadow_color">#D9DBDE</color>
     <color name="dark">#31456A</color>
-    <color name="post">#F5F5F5</color>
+    <color name="post">#EFEFEF</color>
+    <color name="flip">#ECF0F3</color>
 
     <color name="startColor">#FFFFFF</color>
     <color name="midColor">#FFFFFF</color>

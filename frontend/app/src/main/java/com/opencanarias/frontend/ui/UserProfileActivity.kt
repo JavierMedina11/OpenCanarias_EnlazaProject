@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.OrientationHelper
@@ -23,6 +24,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_user_profile.*
 
 import com.retrofitP.loginimplementation.util.PreferenceHelper.get
+import com.retrofitP.loginimplementation.util.PreferenceHelper.set
 
 
 class UserProfileActivity : AppCompatActivity() {
@@ -42,18 +44,11 @@ class UserProfileActivity : AppCompatActivity() {
         setContentView(R.layout.activity_user_profile)
 
         val userId = preferences.getInt("userDNI", 1)
-/*
-        pruebaButton.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                avatarProfile.setBackgroundResource(R.drawable.defaultgirl)
-            }
-        })*/
+        val avatar = preferences.getString("avatar", "aaa").toString()
+        val avatarGirl = "avatarProfile.setBackgroundResource(R.drawable.defaultgirl);"
+        val avatarBoy = "avatarProfile.setBackgroundResource(R.drawable.profile_default);"
 
         getUser(userId)
-
-        backButtonNeu.setOnClickListener {
-            goToMainActivity()
-        }
 
         bookings = ArrayList<Booking>()
 
@@ -65,9 +60,29 @@ class UserProfileActivity : AppCompatActivity() {
         // specify an viewAdapter (see also next example)
         recyclerView.adapter = viewAdapter
 
+        if(avatar == avatarBoy){
+            avatarProfile.setBackgroundResource(R.drawable.profile_default)
+        }else if(avatar == avatarGirl){
+            avatarProfile.setBackgroundResource(R.drawable.defaultgirl)
+        }
+
+        val preferences = PreferenceHelper.defaultPrefs(this)
+        toggleButton.setOnCheckedChangeListener { compoundButton, isChecked ->
+            if(isChecked) {
+                avatarProfile.setBackgroundResource(R.drawable.defaultgirl)
+                preferences["avatar"] = avatarGirl;
+            }
+            else
+                avatarProfile.setBackgroundResource(R.drawable.profile_default)
+                preferences["avatar"] = avatarBoy;
+        }
+
+        backButtonNeu.setOnClickListener {
+            goToMainActivity()
+        }
+
         getBookings()
         //getBooking(userId)
-        //getAllRooms()
     }
 
     private fun getBookings() {

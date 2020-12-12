@@ -48,19 +48,10 @@ class RoomDetailActivity : AppCompatActivity() {
                 val roomName: TextView = findViewById(R.id.roomName)
                 val roomDescription: TextView = findViewById(R.id.roomDescription)
                 val roomImg: ImageView = findViewById(R.id.roomImage)
-                val roomImg1: ImageView = findViewById(R.id.roomImg1)
-                val roomImg2: ImageView = findViewById(R.id.roomImg2)
-                val roomImg3: ImageView = findViewById(R.id.roomImg3)
                 val roomPrice: TextView = findViewById(R.id.roomPrice)
 
                 val imageUrl = url + response?.urlimg1 + ".png" ?: ""
-                /*val imageUrl2 = url + response?.urlimg2 + ".png" ?: ""
-                val imageUrl3 = url + response?.urlimg3 + ".png" ?: ""
-                val imageUrl4 = url + response?.urlimg4 + ".png" ?: ""*/
                 Picasso.with(this).load(imageUrl).into(roomImg);
-                /*Picasso.with(this).load(imageUrl2).into(roomImg1);
-                Picasso.with(this).load(imageUrl3).into(roomImg2);
-                Picasso.with(this).load(imageUrl4).into(roomImg3);*/
 
                 roomSubName.setText(response?.subname ?: "")
                 roomName.setText(response?.name ?: "")

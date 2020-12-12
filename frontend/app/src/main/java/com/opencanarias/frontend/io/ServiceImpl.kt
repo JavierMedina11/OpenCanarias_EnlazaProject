@@ -73,8 +73,9 @@ class ServiceImpl: IVolleyService {
         val path = ServiceSingleton.getInstance(context).baseUrl + "usereserve/" + userId
         val arrayRequest = JsonArrayRequest(Request.Method.GET, path, null,
                 { response ->
+
+                    val bookingArray: JSONArray = response
                     var bookings: ArrayList<Booking> = ArrayList()
-                    val bookingArray: JSONArray = response.getJSONArray(1)
                     for (i in 0 until bookingArray.length()) {
                         val booking = response.getJSONObject(i)
                         val id = booking.getInt("id")

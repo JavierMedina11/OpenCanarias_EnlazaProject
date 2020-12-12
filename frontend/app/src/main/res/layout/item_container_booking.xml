@@ -16,110 +16,113 @@
             android:id="@+id/kbvLocation"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/post"
             android:scaleType="centerCrop"/>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/background_star_rating"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"
-            android:paddingStart="8dp"
-            android:paddingTop="2dp"
-            android:paddingEnd="8dp"
-            android:paddingBottom="2dp"
+        <soup.neumorphism.NeumorphCardView
+            android:layout_width="135dp"
+            android:layout_height="50dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:contentDescription="dasdsad"
-                android:src="@drawable/ic_baseline_star_24"
-                app:tint="#FFFFFF"/>
 
             <TextView
                 android:id="@+id/textStarRating"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
                 android:layout_marginStart="2dp"
                 android:layout_marginEnd="2dp"
-                android:textColor="#FFFFFF"
-                android:textSize="15sp"/>
-        </LinearLayout>
+                android:textColor="@color/dark"
+                android:textSize="15sp" />
+
+        </soup.neumorphism.NeumorphCardView>
+
+        <soup.neumorphism.NeumorphImageButton
+            android:id="@+id/deleteReserv"
+            android:layout_width="51dp"
+            android:layout_height="51dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:scaleType="center"
+            android:src="@drawable/ic_baseline_close_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
-            android:id="@+id/deleteReserv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="210dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/background_star_rating"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"
-            android:paddingStart="8dp"
-            android:paddingTop="2dp"
-            android:paddingEnd="8dp"
-            android:paddingBottom="2dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:contentDescription="dasdsad"
-                android:src="@drawable/ic_baseline_close_24"
-                app:tint="#FFFFFF"/>
-        </LinearLayout>
-
-        <View
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:background="@color/startColor"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="@id/textTitle"/>
-
-        <ImageView
-            android:id="@+id/imageLocation"
-            android:layout_width="1dp"
-            android:layout_height="1dp"
-            android:layout_marginStart="1dp"
-            android:contentDescription="dasdsad"
-            android:src="@color/startColor"
-            app:layout_constraintBottom_toBottomOf="@id/textLocation"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/textLocation"
-            app:layout_constraintVertical_bias="0.416"
-            app:tint="#FFFFFF" />
-
-        <TextView
-            android:id="@+id/textLocation"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="2dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="8dp"
-            android:textColor="@color/dark"
-            android:textSize="25sp"
-            android:textStyle="bold"
+            android:layout_height="105dp"
+            android:layout_marginBottom="4dp"
+            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@id/imageLocation" />
+            app:layout_constraintStart_toStartOf="parent">
 
-        <TextView
-            android:id="@+id/textTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="2dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="2dp"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/dark"
-            android:textSize="15sp"
-            app:layout_constraintBottom_toTopOf="@id/imageLocation"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/text"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:text="Check In:"
+                    android:textColor="@color/dark"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textLocation"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="20dp"
+                    android:fontFamily="@font/quicksand_light"
+                    android:textColor="@color/dark"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:text="Check Out:"
+                    android:textColor="@color/dark"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textTitle"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="20dp"
+                    android:fontFamily="@font/quicksand_light"
+                    android:textColor="@color/dark"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -15,6 +15,7 @@ import com.opencanarias.frontend.io.ServiceImpl
 import com.opencanarias.frontend.models.Booking
 import com.retrofitP.loginimplementation.util.PreferenceHelper
 import com.retrofitP.loginimplementation.util.PreferenceHelper.set
+import soup.neumorphism.NeumorphImageButton
 
 class UserAdapter(var bookingList: ArrayList<Booking>, val context: Context): RecyclerView.Adapter<UserAdapter.ViewHolder>() {
 
@@ -40,10 +41,10 @@ class UserAdapter(var bookingList: ArrayList<Booking>, val context: Context): Re
             val textName: TextView = itemView.findViewById(R.id.textTitle)
             val textSubname: TextView = itemView.findViewById(R.id.textLocation)
             val textStar: TextView = itemView.findViewById(R.id.textStarRating)
-            val deleteButton: LinearLayout = itemView.findViewById(R.id.deleteReserv)
+            val deleteButton: NeumorphImageButton = itemView.findViewById(R.id.deleteReserv)
 
-            textName.text = b.check_in
-            textSubname.text = b.check_out
+            textName.text = b.check_out
+            textSubname.text = b.check_in
             textStar.text = b.diet
 
             kbv.setOnClickListener{
