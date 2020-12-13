@@ -2,15 +2,15 @@
 This project has been developed for the Open Canarias company, as it is already summarized in the name itself, the summarized idea of ​​the application is that a anyone can make a reservation for a hotel room.
 
  ## Table of Contents
-1. [Data model](#data)
-2. [Entity Relationship](#entity)
+1. [Data model](#data-model)
+2. [Entity Relationship](#entity-relationship)
 3. [Usability](#usability)
 4. [Use cases](#use cases)
-5. [Enlaza Project Prototype](#enlaza)
-6. [Technology Stack](#technology)
+5. [Enlaza Project Prototype](#enlaza-project-prototype)
+6. [Technology Stack](#technology-Stack)
 7. [Repositories](#repositories)
 8. [Planification](#planification)
-9. [Conclusions and opinions](#conclusions)
+9. [Conclusions and opinions](#conclusions-and-opinions)
 
 ## Data model
 The data model follows the following description or structure:
