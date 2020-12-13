@@ -3,14 +3,14 @@ This project has been developed for the Open Canarias company, as it is already 
 
  ## Table of Contents
 1. [Data model](#data_model)
-2. [Entity Relationship](#entity_relathionsgip)
+2. [Entity Relationship](#entity relathionsgip)
 3. [Usability](#usability)
-4. [Use cases](#use_cases)
-5. [Enlaza Project Prototype](#enlaza_project_prototype)
-6. [Technology Stack](#technology_stack)
+4. [Use cases](#use cases)
+5. [Enlaza Project Prototype](#enlaza project prototype)
+6. [Technology Stack](#technology stack)
 7. [Repositories](#repositories)
 8. [Planification](#planification)
-9. [Conclusions and opinions](#conclusions_and_opinions)
+9. [Conclusions and opinions](#conclusions and opinions)
 
 ## Data model
 The data model follows the following description or structure:
