@@ -60,7 +60,7 @@ The application follows the architecture of the prototype provided as far as pos
 
 * **Reserve or Update Reserve windows:** In these windows you will see a form where you can carry out the specific actions of each of the windows.
 
-<img src="img/reservation.png" alt="Reservation" width="200px" height="400px" />
+<img src="img/reserve.png" alt="Reservation" width="200px" height="400px" />
 <img src="img/update.png" alt="Update" width="200px" height="400px" />
 
 ## Prototipo Proyecto Enlaza
