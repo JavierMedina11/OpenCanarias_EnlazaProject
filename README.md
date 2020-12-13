@@ -5,7 +5,7 @@ This project has been developed for the Open Canarias company, as it is already 
 1. [Data model](#data-model)
 2. [Entity Relationship](#entity-relationship)
 3. [Usability](#usability)
-4. [Use cases](#use cases)
+4. [Use cases](#use-cases)
 5. [Enlaza Project Prototype](#enlaza-project-prototype)
 6. [Technology Stack](#technology-Stack)
 7. [Repositories](#repositories)
@@ -38,7 +38,7 @@ The data model follows the following description or structure:
 ## Entity Relationship
 <img src="img/entidadrelacion.png" alt="Entidad Relacion" width="750px" height="400px" />
 
-## Entity Relationship
+## Model Relationship
 <img src="img/modelorelacional.png" alt="Entidad Relacion" width="750px" height="400px" />
 
 ## Use cases
