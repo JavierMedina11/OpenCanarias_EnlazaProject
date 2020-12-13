@@ -95,9 +95,8 @@ The application follows the architecture of the prototype provided as far as pos
 <img src="img/main.png" alt="Imagen7" width="200px" height="400px" />
 
 * **Reserve or Update Reserve windows:** In these windows you will see a form where you can carry out the specific actions of each of the windows.
-
-<img src="img/reserve.png" alt="Reservation" width="200px" height="400px" />
-<img src="img/update.png" alt="Update" width="200px" height="400px" />
+<img style="float: right;" src="img/reserve.png" alt="Reservation" width="200px" height="400px" />
+<img style="float: right;" src="img/update.png" alt="Update" width="200px" height="400px" />
 
 ## Enlaza Project Prototype
 
