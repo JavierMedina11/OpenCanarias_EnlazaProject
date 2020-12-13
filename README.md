@@ -1,6 +1,16 @@
 # Enlaza Proyect - Open Canarias
 This project has been developed for the Open Canarias company, as it is already summarized in the name itself, the summarized idea of ​​the application is that a anyone can make a reservation for a hotel room.
 
+ ## Table of Contents
+1. [Data model](#data_model)
+2. [Entity Relationship](#entity_relathionsgip)
+3. [Usability](#usability)
+4. [Use cases](#use_cases)
+5. [Enlaza Project Prototype](#enlaza_project_prototype)
+6. [Technology Stack](#technology_stack)
+7. [Repositories](#repositories)
+8. [Planification](#planification)
+9. [Conclusions and opinions](#conclusions_and_opinions)
 
 ## Data model
 The data model follows the following description or structure:
@@ -159,7 +169,7 @@ The repositories we find this same one and that of https://github.com/JavierMedi
 
 The planning of the app, I have had to do it on the fly, that is, since I obtained the information from the company with such a delay, I have had to make an effort to try to do everything in a period of three or three and a half weeks.
 
-### Conclusions, opinions and reflections
+### Conclusions and opinions
 
 My final conclusion regarding the project is that it has not been easy, since when working with a technological stack in which I had no experience, especially, not so much the backend (Laravel & Lumen), but Android Studio based on Kotlin which is the one that made up the Frontend, it has not been a mild experience, especially when we get to the delivery date and in which the pressure increases even more, although, I would like to highlight that based on blows and despair, my Confidence in my abilities may have improved a bit, although, due to the short period of time at work, I have not been able to implement everything that I would like, which leaves me with a small feeling of discomfort and unease.
 
