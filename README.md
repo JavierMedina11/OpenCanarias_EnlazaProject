@@ -82,9 +82,6 @@ The application follows the architecture of the prototype provided as far as pos
 
 * **Login or registration form:** In this window you will have to register, or in case you already have an account, simply enter your identifying information and enter.
 
-<img src="img/login.png" alt="Login" width="400px" height="600px" />
-<img src="img/register.png" alt="Register" width="400px" height="400px" />
-
 * **Discover window:** In this window you must select between the different destinations to select.
 
 <img src="img/main.png" alt="Imagen7" width="200px" height="400px" />
