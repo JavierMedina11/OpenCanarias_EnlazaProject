@@ -2,15 +2,44 @@
 This project has been developed for the Open Canarias company, as it is already summarized in the name itself, the summarized idea of ​​the application is that a anyone can make a reservation for a hotel room.
 
  ## Table of Contents
-1. [Data model](#data-model)
-2. [Entity Relationship](#entity-relationship)
-3. [Usability](#usability)
-4. [Use cases](#use-cases)
-5. [Enlaza Project Prototype](#enlaza-project-prototype)
-6. [Technology Stack](#technology-Stack)
-7. [Repositories](#repositories)
-8. [Planification](#planification)
-9. [Conclusions and opinions](#conclusions-and-opinions)
+1. [Pre Requisites](#pre-requisites)
+2. [Data model](#data-model)
+3. [Entity Relationship](#entity-relationship)
+4. [Model Relationship](#model-relationship)
+5. [Usability](#usability)
+6. [Use cases](#use-cases)
+7. [Enlaza Project Prototype](#enlaza-project-prototype)
+8. [Technology Stack](#technology-stack)
+9. [Repositories](#repositories)
+10. [Planification](#planification)
+11. [Conclusions and opinions](#conclusions-and-opinions)
+
+## Pre Requisites
+### First Steps 📋
+When you download or clone this repository, the first thing you should do is run the following command in the direction of the project
+```
+composer install
+```
+### Migrations ⚙️
+Then you must take into account the configuration of the DB in the .env file. Then you should create a migration with the following command:
+```
+php artisan migrate
+```
+You should also take into account other existing commands if you modify or eliminate something from the migrations:
+```
+php artisan migrate:rollback
+php artisan migrate
+```
+And you are ready to start the Android app, but first you should be sure to open your command console and type the following command
+```
+ipconfig
+```
+Once you are clear about what IP your computer is using, you should go to the terminal and go to the backend folder, and then execute the following
+
+```
+php -S (YOUR_IP):8000 -t public
+```
+Now you should go to the IRetroFit file and ServiceSingleton to modify the ip previously established by me to yours
 
 ## Data model
 The data model follows the following description or structure:
@@ -73,7 +102,7 @@ The application follows the architecture of the prototype provided as far as pos
 <img src="img/reserve.png" alt="Reservation" width="200px" height="400px" />
 <img src="img/update.png" alt="Update" width="200px" height="400px" />
 
-## Prototipo Proyecto Enlaza
+## Enlaza Project Prototype
 
 This will be the prototype or at least the initial idea of ​​how the application should be, once developed.
 
@@ -165,7 +194,7 @@ The technology stack is divided into the following technologies:
 
 The repositories we find this same one and that of https://github.com/JavierMedina11/Prototerapia-ProyectoEnlaza
 
-### Planificacion
+### Planification
 
 The planning of the app, I have had to do it on the fly, that is, since I obtained the information from the company with such a delay, I have had to make an effort to try to do everything in a period of three or three and a half weeks.
 
