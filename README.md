@@ -71,10 +71,10 @@ The data model follows the following description or structure:
 <img src="img/modelorelacional.png" alt="Entidad Relacion" width="750px" height="400px" />
 
 ## User requirements
-Los requerimientos de usuario se puede definir lo siguiente:
-* El usuario ha de poder registrarse mediante la autentificacion basica, ademas, de poder hacer Login.
-* El usuario podra visualizar las habitaciones disponibles.
-* El usuario ha de poder hacer reservas, una vez echas debera de poder visualizarlas, para luego poder eliminarlas o actualizarlas.
+The user requirements can be defined as follows:
+* The user must be able to register through basic authentication, in addition, to be able to Login.
+* The user can view the available rooms.
+* The user must be able to make reservations, once they are made, they should be able to view them, and then be able to delete or update them.
 
 
 ## Use cases
