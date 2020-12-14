@@ -23,11 +23,7 @@ class CreateRoomsTable extends Migration
             $table->integer('size');
             $table->integer('price');
             $table->float('starating');
-            $table->boolean('avaliable');
             $table->string('urlimg1');
-            $table->string('urlimg2');
-            $table->string('urlimg3');
-            $table->string('urlimg4');
         });
     }
 

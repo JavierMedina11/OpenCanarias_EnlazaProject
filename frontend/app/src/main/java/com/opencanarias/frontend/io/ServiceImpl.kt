@@ -30,13 +30,11 @@ class ServiceImpl: IVolleyService {
                     val size = bicycle.getInt("size")
                     val price = bicycle.getInt("price")
                     val starating = bicycle.getDouble("starating")
-                    val avaliable = bicycle.getInt("avaliable")
                     val urlimg1 = bicycle.getString("urlimg1")
-                    val urlimg2 = bicycle.getString("urlimg2")
-                    val urlimg3 = bicycle.getString("urlimg3")
-                    val urlimg4 = bicycle.getString("urlimg4")
+
+
                     rooms.add(Room(id, number, name, subname, description, numperson, size, price,
-                        starating.toFloat(), avaliable, urlimg1, urlimg2, urlimg3, urlimg4))
+                        starating.toFloat(), urlimg1))
                 }
                 completionHandler(rooms)
             },
@@ -108,14 +106,10 @@ class ServiceImpl: IVolleyService {
                 val size = response.getInt("size")
                 val price = response.getInt("price")
                 val starating = response.getDouble("starating")
-                val avaliable = response.getInt("avaliable")
                 val urlimg1 = response.getString("urlimg1")
-                val urlimg2 = response.getString("urlimg2")
-                val urlimg3 = response.getString("urlimg3")
-                val urlimg4 = response.getString("urlimg4")
 
                 val bicycle = Room(id, number, name, subname, description, numperson, size, price,
-                    starating.toFloat(), avaliable, urlimg1, urlimg2, urlimg3, urlimg4)
+                    starating.toFloat(), urlimg1)
                 completionHandler(bicycle)
             },
             { error ->

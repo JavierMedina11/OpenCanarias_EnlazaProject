@@ -38,12 +38,24 @@
                 android:background="@drawable/bg_homebutton" />
 
             <TextView
+                android:id="@+id/roomSize"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="12dp"
+                android:fontFamily="@font/quicksand_light"
+                android:textColor="@color/dark"
+                android:textSize="15sp" />
+
+            <TextView
                 android:id="@+id/roomSubName"
                 android:layout_width="360dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="2dp"
                 android:layout_gravity="center"
                 android:fontFamily="@font/quicksand_medium"
                 android:textColor="@color/dark"

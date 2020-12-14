@@ -48,6 +48,7 @@ class RoomDetailActivity : AppCompatActivity() {
                 val roomName: TextView = findViewById(R.id.roomName)
                 val roomDescription: TextView = findViewById(R.id.roomDescription)
                 val roomImg: ImageView = findViewById(R.id.roomImage)
+                val roomSize: TextView = findViewById(R.id.roomSize)
                 val roomPrice: TextView = findViewById(R.id.roomPrice)
 
                 val imageUrl = url + response?.urlimg1 + ".png" ?: ""
@@ -57,6 +58,7 @@ class RoomDetailActivity : AppCompatActivity() {
                 roomName.setText(response?.name ?: "")
                 roomDescription.setText(response?.description ?: "")
                 roomPrice.setText(response?.price.toString() + "$" ?: "")
+                roomSize.setText(response?.size.toString() + " m2" ?: "")
             }
         }
     }
