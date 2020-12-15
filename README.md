@@ -78,7 +78,6 @@ The user requirements can be defined as follows:
 * The user can view the available rooms.
 * The user must be able to make reservations, once they are made, they should be able to view them, and then be able to delete or update them.
 
-
 ## Use cases
 <img src="doc/img/casosdeuso.png" alt="Entidad Relacion" width="750px" height="400px" />
 
@@ -111,6 +110,10 @@ The application follows the architecture of the prototype provided as far as pos
 
 I describe this section in its corresponding repository, https://github.com/JavierMedina11/Prototipo-ProyectoEnlaza
 
+## User manual
+[Manual Español](https://github.com/JavierMedina11/OpenCanarias_EnlazaProject/blob/main/doc/Documentacion%20Eng.pdf)
+[English Manual](https://github.com/JavierMedina11/OpenCanarias_EnlazaProject/blob/main/doc/Documentacion%20Esp.pdf)
+
 ## Technology Stack
 The technology stack is divided into the following technologies:
 
@@ -118,6 +121,20 @@ The technology stack is divided into the following technologies:
 * **Microservicio:** Lumen Framework
 * **BBDD:** MySQL
 * **Frontend:** Android Kotlin
+
+
+## Technology Comparison
+As for the technology comparison, I would like to get to the point and compare the programming in native or hybrid App's, since they are the ones I have had the pleasure of working with. As for these two, I would like to emphasize that both have their advantages and disadvantages.
+
+Even so, I will try to expose it much more clearly:
+* ** Time-to-market of the initial development / add and adjust a new functionality: ** In the case of hybrid applications it is not necessary to maintain two different technologies and two different base codes, so with the same resources we can produce new features faster.
+* ** User experience: ** While it is true that with current technologies, it is possible to create a user experience very similar to a native one, in some old terminals, the performance and therefore the user experience may be somewhat lower, therefore it is common for the application to flow better when it is 100% native.
+* ** Simplicity / Reuse of code: ** The code of a hybrid application is portable to other platforms with minimal complexity, as long as they have support for said applications (Android Auto, Android Tv, etc). In addition, the existence of a single code for the base application, despite the fact that there may be specific customizations for each platform, gives a clear advantage to the hybrid application.
+* ** Look & Feel of the application: ** It was always easier since the compatibility with CSS, which hybrid applications have, gives it a clear advantage in this regard, it should be noted that the native ones have a large number of libraries with which to get this "Look & Feel".
+* ** Development cost: ** In native applications, by having to generate a different code for each platform, development costs grow in proportion to the number of platforms on which the developed application will be available.
+
+In conclusion, for me there are two key elements that we identify in almost all the projects we face: time and money. In the case of hybrid applications, both the time-to-market (initial and evolutionary) and the costs are lower, therefore it is presented as a very good option for the development of App's that do not make use of elements such as 3D graphics , super-intensive use of CPU or have a direct link with hardware elements such as thermal cameras, NFC readers, etc.
+
 
 ## Repositories
 
