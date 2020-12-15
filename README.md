@@ -142,7 +142,11 @@ Even so, I will try to expose it much more clearly:
 
 In conclusion, for me there are two key elements that we identify in almost all the projects we face: time and money. In the case of hybrid applications, both the time-to-market (initial and evolutionary) and the costs are lower, therefore it is presented as a very good option for the development of App's that do not make use of elements such as 3D graphics , super-intensive use of CPU or have a direct link with hardware elements such as thermal cameras, NFC readers, etc.
 
+### Web Aps
+
 At the same time, highlight the app webs. They are accessed directly from the browser of the phone or tablet, and in almost all devices it will be opened in almost the same way thanks to the use of Responsive Web Design. It is the simplest and most economical option, since it reduces development costs. Compatibility, usability and simplicity are among its advantages.
+
+### PWAs or Progressive Web App
 
 PWAs are commonly defined as Apps that bring together the best of web and native applications, even coming to be understood as a middle ground or an evolved form. Among its advantages we find:
 * **Responsive:** Currently, most websites have a responsive design that allows them to adapt to different devices, something essential with the predominant role of smartphones.
@@ -151,6 +155,15 @@ PWAs are commonly defined as Apps that bring together the best of web and native
 * **Offline:** A PWA must allow access, either partially or even totally, despite the fact that there is no Internet connection (or it is of low quality).
 * **Multiplataforma:** In its development, the technology used contemplates its execution on various devices, operating systems and browsers. This, in addition to being key when it comes to offering a satisfactory user experience and reaching more potential audiences, makes it easier for developers and reduces costs, since differentiated programming is not required (something that does happen with native Apps) .
 * **Indexable y enlazable:** The content of a PWA is trackable and indexable, so that it can appear as a result in a search engine. In addition, it can be shared using a URL, with the possibility that the other person uses it without installing it.
+
+### Power Apps
+
+On many occasions, it is for a company to find a solution that is specifically tailored to its needs and if it does find it, the time factor may be the reason that profit maximization is not achieved immediately. By integrating the Power Apps tool into your organization, you can solve this problem by creating custom applications from your company and for your company. By doing so they will enjoy benefits such as:
+* **Wide availability:** The development platform, Power Apps, is available with an Office 365 subscription. This service is widely available; so you can create apps of different types to integrate them on various platforms.
+* **Better data integration:** If your company uses Microsoft's Common Data Service (CDS), Power Apps will allow access to business data; from more than 200 different data sources such as Outlook, OneDrive, PowerPoint, Excel, SharePoint, Dynamics 365, Salesforce, Dropbox, among others.
+* **Automated functions:** With the integration of Power Apps, companies can automate their processes and functions, leaving aside the manual entry of certain data. You can also send relevant updates and data to workers and buyers directly to their smartphones via push notifications.
+* **Guaranteed security:** With the integration of Power Apps in the company, you have full control of the applications through the administration center.
+* **Higher productivity:** By being able to create applications to meet the needs of the company and automate processes, greater productivity is achieved. Employees save time by not having to perform manual tasks and better optimize their time to dedicate to tasks of greater relevance to the company.
 
 ## Repositories
 
