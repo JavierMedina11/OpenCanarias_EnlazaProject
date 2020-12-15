@@ -80,6 +80,10 @@ The user requirements can be defined as follows:
 * The user can view the available rooms.
 * The user must be able to make reservations, once they are made, they should be able to view them, and then be able to delete or update them.
 
+## RelationShips
+A user can only book a room that's available A user can book many rooms.
+A room can only be reserved by one user, as long as it is on a specific date.
+
 ## Use cases
 <img src="doc/img/casosdeuso.png" alt="Entidad Relacion" width="750px" height="400px" />
 
