@@ -9,10 +9,12 @@ This project has been developed for the Open Canarias company, as it is already 
 5. [User requirements](#user-requirements)
 6. [Use cases](#use-cases)
 7. [Enlaza Project Prototype](#enlaza-project-prototype)
-8. [Technology Stack](#technology-stack)
-9. [Repositories](#repositories)
-10. [Planification](#planification)
-11. [Conclusions and opinions](#conclusions-and-opinions)
+8. [User manual](#user-manual)
+9. [Technology Stack](#technology-stack)
+10. [Technology Comparison](#technology-comparison)
+11. [Repositories](#repositories)
+12. [Planification](#planification)
+13. [Conclusions and opinions](#conclusions-and-opinions)
 
 ## Pre Requisites
 ### First Steps 📋
@@ -112,6 +114,7 @@ I describe this section in its corresponding repository, https://github.com/Javi
 
 ## User manual
 [Manual Español](https://github.com/JavierMedina11/OpenCanarias_EnlazaProject/blob/main/doc/Documentacion%20Eng.pdf)
+
 [English Manual](https://github.com/JavierMedina11/OpenCanarias_EnlazaProject/blob/main/doc/Documentacion%20Esp.pdf)
 
 ## Technology Stack
