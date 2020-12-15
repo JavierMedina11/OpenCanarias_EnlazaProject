@@ -23,6 +23,10 @@ interface IVolleyService {
 
     fun deleteById(context: Context, roomId: Int, completionHandler: () -> Unit)
 
+    fun deleteByIdUser(context: Context, roomId: Int, completionHandler: () -> Unit)
+
     fun updateReserve(context: Context,  booking: Booking, completionHandler: () -> Unit)
+
+    fun updateUser(context: Context,  user: User, completionHandler: () -> Unit)
 
 }

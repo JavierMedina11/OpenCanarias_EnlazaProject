@@ -81,6 +81,23 @@ class UserProfileActivity : AppCompatActivity() {
             goToMainActivity()
         }
 
+        deleteButton.setOnClickListener {
+            val bicycleServiceImpl = ServiceImpl()
+            bicycleServiceImpl.deleteByIdUser(this, userId) { ->
+                run {
+                    preferences["token"] = "";
+                    preferences["userDNI"] = "";
+                    val intent = Intent(this, HomeActivity::class.java)
+                    this.startActivity(intent)
+                    finish()
+                }
+            }
+        }
+
+        updateButtonPrueba.setOnClickListener {
+            goToUpdateActivity()
+        }
+
         getBookings()
         //getBooking(userId)
     }
@@ -121,6 +138,11 @@ class UserProfileActivity : AppCompatActivity() {
 
     private fun goToMainActivity(){
         val intent= Intent(this, MainActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun goToUpdateActivity() {
+        val intent= Intent(this, UpdateUser::class.java)
         startActivity(intent)
     }
 }

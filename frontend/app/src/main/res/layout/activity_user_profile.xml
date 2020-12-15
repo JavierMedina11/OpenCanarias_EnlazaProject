@@ -60,7 +60,19 @@
     </soup.neumorphism.NeumorphCardView>
 
     <soup.neumorphism.NeumorphImageButton
-        android:id="@+id/logoutButtonNeu"
+        android:id="@+id/updateButtonPrueba"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp"
+        android:scaleType="center"
+        android:src="@drawable/updateuser"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:neumorph_shapeType="pressed"/>
+
+    <soup.neumorphism.NeumorphImageButton
+        android:id="@+id/deleteButton"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginTop="20dp"
@@ -68,7 +80,7 @@
         android:scaleType="center"
         app:neumorph_shapeType="pressed"
         app:neumorph_strokeWidth="10dp"
-        android:src="@drawable/logout"
+        android:src="@drawable/close"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -181,6 +181,20 @@ class ServiceImpl: IVolleyService {
         ServiceSingleton.getInstance(context).addToRequestQueue(objectRequest)
     }
 
+    override fun deleteByIdUser(context: Context, userId: Int, completionHandler: () -> Unit) {
+        val path = ServiceSingleton.getInstance(context).baseUrl + "users/" + userId
+        val objectRequest = JsonObjectRequest(Request.Method.DELETE, path, null,
+                { response ->
+                    Log.v("Hola caracola", "se borró de la vida")
+                    completionHandler()
+                },
+                { error ->
+                    Log.v("Hola caracola", "dió error")
+                    completionHandler()
+                })
+        ServiceSingleton.getInstance(context).addToRequestQueue(objectRequest)
+    }
+
     override fun updateReserve(context: Context, booking: Booking, completionHandler: () -> Unit) {
         val path = ServiceSingleton.getInstance(context).baseUrl + "booking/" + booking.id
             val bookingJSON: JSONObject = JSONObject()
@@ -192,12 +206,23 @@ class ServiceImpl: IVolleyService {
                 bookingJSON.put("id_room", booking.id_room)
 
             val objectRequest = JsonObjectRequest(Request.Method.PUT, path, bookingJSON,
-                    { response ->
-                        completionHandler()
-                    },
-                    { error ->
-                        completionHandler()
-                    })
+                    { response -> completionHandler() },
+                    { error -> completionHandler() })
         ServiceSingleton.getInstance(context).addToRequestQueue(objectRequest)
-        }
+    }
+
+    override fun updateUser(context: Context, user: User, completionHandler: () -> Unit) {
+        val path = ServiceSingleton.getInstance(context).baseUrl + "users/" + user.id
+        val userJSON: JSONObject = JSONObject()
+        userJSON.put("id", user.id.toString())
+        userJSON.put("name", user.name)
+        userJSON.put("email", user.email)
+        userJSON.put("password", user.password)
+
+        val objectRequest = JsonObjectRequest(Request.Method.PUT, path, userJSON,
+            { response -> completionHandler() },
+            { error -> completionHandler() })
+        ServiceSingleton.getInstance(context).addToRequestQueue(objectRequest)
+    }
+
 }

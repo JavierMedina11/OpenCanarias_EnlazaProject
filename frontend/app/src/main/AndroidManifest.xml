@@ -13,11 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.UpdateReservationActivity"></activity>
+        <activity android:name=".ui.UpdateUser"></activity>
+        <activity android:name=".ui.UpdateReservationActivity" />
         <activity android:name=".ui.ReservationActivity" />
-        <activity android:name=".ui.UserProfileActivity">
-
-        </activity>
+        <activity android:name=".ui.UserProfileActivity"></activity>
         <activity android:name=".ui.RoomDetailActivity" />
         <activity
             android:name=".ui.RegisterActivity"
