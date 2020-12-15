@@ -138,6 +138,15 @@ Even so, I will try to expose it much more clearly:
 
 In conclusion, for me there are two key elements that we identify in almost all the projects we face: time and money. In the case of hybrid applications, both the time-to-market (initial and evolutionary) and the costs are lower, therefore it is presented as a very good option for the development of App's that do not make use of elements such as 3D graphics , super-intensive use of CPU or have a direct link with hardware elements such as thermal cameras, NFC readers, etc.
 
+A su vez, destacar las webs app. A ellas se accede directamente desde el navegador del teléfono o tablet, y en casi todos los dispositivos se abrirá casi de la misma manera gracias al uso del Responsive Web Design. Es la opción más sencilla y económica, puesto que reduce los costes de desarrollo. La compatibilidad, usabilidad y sencillez, se encuentran entre sus ventajas.
+
+Las PWA se definen comúnmente como las Apps que reúnen lo mejor de las aplicaciones web y de las nativas, incluso llegando a ser entendidas como un punto medio o una forma evolucionada. Entre sus ventajas encontramos:
+* **Responsive:** Currently, most websites have a responsive design that allows them to adapt to different devices, something essential with the predominant role of smartphones.
+* **Actualizada:** The PWAs will always show their latest version to the user, with the use of automatic updates, constantly and instantaneously and without the need to download them. This is possible thanks to the use of Service Workers and because it is still a web App, independent of the publication (and the entire process of revision and installation by the user that it entails) in the application markets.
+* **Segura:** The secure HTTPS protocol is always used, which is also necessary for the Service Worker installation.
+* **Offline:** A PWA must allow access, either partially or even totally, despite the fact that there is no Internet connection (or it is of low quality).
+* **Multiplataforma:** In its development, the technology used contemplates its execution on various devices, operating systems and browsers. This, in addition to being key when it comes to offering a satisfactory user experience and reaching more potential audiences, makes it easier for developers and reduces costs, since differentiated programming is not required (something that does happen with native Apps) .
+* **Indexable y enlazable:** The content of a PWA is trackable and indexable, so that it can appear as a result in a search engine. In addition, it can be shared using a URL, with the possibility that the other person uses it without installing it.
 
 ## Repositories
 
