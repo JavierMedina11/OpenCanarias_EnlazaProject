@@ -76,24 +76,24 @@ The data model follows the following description or structure:
 
 ## User requirements
 The user requirements can be defined as follows:
-  * **R1.** Plataforma.
-    * **R1.1.** La app que haremos sera para Movil.
-    * **R1.2.** No existe un app previa donde tomar referencias.
-  * **R2.** Solo se implementara las funciones que sean desglosadas a partir de los dos cruds realizados en la app.
-  * **R3.** Los usuarios tendran que acceder mediante un registro, aportando su nombre, email y contraseña. 
-  * **R4.** Una vez dentro de la actividad principal, podran dirigir las diferentes.
-    * **R4.1.** El usuario podra hacer logout, pulsando en el boton arriba a la izquierda.
-    * **R4.2.** El usuario podra acceder al perfil del usuario, haciendo click en el boton superior derecho.
-     * **R4.3.** Si haces click en cualquiera de las habitaciones pasaras a la misma en detalle.
-   * **R5** Una vez dentro de la parte del perfil del usuario podras contemplar las siguientes posibilidades:
-      * **R5.1.** Si hace click en el del centro superior podras pasar a la edicion del usuario.
-      * **R5.2.** Si hace click en el boton superior derecho eliminarias al usuariom.
-      * **R5.3.** Luego en el centro inferior encontraras una serie de tarjetas donde visualizaras las reservas del usuario.
-        * **R5.3.1.** Si haces click sobre ellas podras ir al formulario para actualizarlas.
-        * **R5.3.2.** Si hace click en el boton de la cruceta la eliminaras.
-   * **R6** Una vez dentro de la parte de las habitaciones en detalle habra que tener en cuenta:
-      * **R.6.1.** Si haces click sobre el boton inferior derecho pasaras al formulario donde crear la reserva del usuario con el que te has logueado y de la habotacopn, con los    datos especificados en la misma.
-      * **R.6.2.** En el formulario se validara que no te deje marcar dias anteriores a el dia actual o posteriores a 30 dias.
+* **R1.** Platform.
+    * **R1.1.** The app that we will make will be for Mobile.
+    * **R1.2.** There is no previous application to take references.
+* **R2.** Only the functions that are broken down from the two cruds performed in the app will be implemented.
+* **R3.** Users will have to access by registering, providing their name, email and password.
+* **R4.** Once inside the main activity, they will be able to direct the different ones.
+  * **R4.1.** The user will be able to logout, by clicking on the button on the top left.
+  * **R4.2.** The user can access the user's profile by clicking on the upper right button.
+  * **R4.3.** If you click on any of the rooms you will go to it in detail.
+* **R5.** Once inside the part of the user's profile you can contemplate the following possibilities:
+  * **R5.1.** If you click on the one in the upper center, you can go to the user's edition.
+  * **R5.2.** If you click on the upper right button you will delete the user.
+  * **R5.3.** Then in the lower center you will find a series of cards where you will view the user's reservations.
+    * **R5.3.1.** If you click on them you can go to the form to update them.
+    * **R5.3.2.** If you click on the crosshead button, you will delete it.
+* **R6** Once inside the part of the rooms in detail it will be necessary to take into account:
+  * **R6.1.** If you click on the lower right button, you will go to the form where you can create the reservation for the user with whom you have logged in and for the habotacopn, with the data specified therein.
+  * **R6.2.** The form will validate that it does not let you mark days before the current day or after 30 days.
 
 ## RelationShips
 A user can only book a room that's available A user can book many rooms.
