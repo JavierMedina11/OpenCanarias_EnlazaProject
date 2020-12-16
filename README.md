@@ -84,15 +84,16 @@ The user requirements can be defined as follows:
   * **R4.** Una vez dentro de la actividad principal, podran dirigir las diferentes.
     * **R4.1.** El usuario podra hacer logout, pulsando en el boton arriba a la izquierda.
     * **R4.2.** El usuario podra acceder al perfil del usuario, haciendo click en el boton superior derecho.
-      * **R4.2.1.** Si hace click en el boton superior izquierdo podras volver a la pantalla anterior.
-      * **R4.2.2.** Si hace click en el del centro superior podras pasar a la edicion del usuario.
-      * **R4.2.3.** Si hace click en el boton superior derecho eliminarias al usuariom.
-      * **R4.2.4.** Luego en el centro inferior encontraras una serie de tarjetas donde visualizaras las reservas del usuario.
-        * **R4.2.4.1.** Si haces click sobre ellas podras ir al formulario para actualizarlas.
-        * **R4.2.4.2.** Si hace click en el boton de la cruceta la eliminaras.
      * **R4.3.** Si haces click en cualquiera de las habitaciones pasaras a la misma en detalle.
-         * **R4.3.1.** Si haces click sobre el boton inferior derecho pasaras al formulario donde crear la reserva del usuario con el que te has logueado y de la habotacopn, con los    datos especificados en la misma.
-         * **R4.3.2.** En el formulario se validara que no te deje marcar dias anteriores a el dia actual o posteriores a 30 dias.
+   * **R5** Una vez dentro de la parte del perfil del usuario podras contemplar las siguientes posibilidades:
+      * **R5.1.** Si hace click en el del centro superior podras pasar a la edicion del usuario.
+      * **R5.2.** Si hace click en el boton superior derecho eliminarias al usuariom.
+      * **R5.3.** Luego en el centro inferior encontraras una serie de tarjetas donde visualizaras las reservas del usuario.
+        * **R5.3.1.** Si haces click sobre ellas podras ir al formulario para actualizarlas.
+        * **R5.3.2.** Si hace click en el boton de la cruceta la eliminaras.
+   * **R6** Una vez dentro de la parte de las habitaciones en detalle habra que tener en cuenta:
+      * **R.6.1.** Si haces click sobre el boton inferior derecho pasaras al formulario donde crear la reserva del usuario con el que te has logueado y de la habotacopn, con los    datos especificados en la misma.
+      * **R.6.2.** En el formulario se validara que no te deje marcar dias anteriores a el dia actual o posteriores a 30 dias.
 
 ## RelationShips
 A user can only book a room that's available A user can book many rooms.
